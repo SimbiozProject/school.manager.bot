@@ -29,6 +29,14 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>testbotRepo</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/SimbiozProject/school.manager.bot</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
