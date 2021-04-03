@@ -1,0 +1,40 @@
+{
+  "update_id": 231593404,
+  "message": {
+    "chatId": 1083113433,
+    "superGroupMessage": false,
+    "channelMessage": false,
+    "groupMessage": false,
+    "command": true,
+    "reply": false,
+    "userMessage": true,
+    "message_id": 3,
+    "from": {
+      "bot": false,
+      "id": 1083113433,
+      "first_name": "1",
+      "is_bot": false,
+      "last_name": "Владимир",
+      "language_code": "ru"
+    },
+    "date": 1617468761,
+    "chat": {
+      "groupChat": false,
+      "superGroupChat": false,
+      "userChat": true,
+      "channelChat": false,
+      "id": 1083113433,
+      "type": "private",
+      "first_name": "1",
+      "last_name": "Владимир"
+    },
+    "text": "/start",
+    "entities": [
+      {
+        "type": "bot_command",
+        "offset": 0,
+        "length": 6
+      }
+    ]
+  }
+}
