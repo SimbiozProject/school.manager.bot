@@ -10,11 +10,6 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-		TestQuestions testQuestions = new TestQuestions();
-		testQuestions.addsQuestionsToTest();
-
-		TestAnswersOnQuestions testAnswersOnQuestions = new TestAnswersOnQuestions();
-		testAnswersOnQuestions.addsAnswersOnQuestions();
 	}
 
 }
