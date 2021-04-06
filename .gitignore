@@ -25,3 +25,5 @@ hs_err_pid*
 .idea/
 target/
 demo.iml
+
+/src/main/resources/application.properties
