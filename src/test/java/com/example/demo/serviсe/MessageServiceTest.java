@@ -22,9 +22,6 @@ class MessageServiceTest extends DemoApplicationTests {
     @Autowired
     MessageService messageService;
 
-
-
-
     @Test
     void onHelloReceived() throws IOException {
         Update update = objectMapper.readValue(new File("src/test/resources/update.json"), Update.class);
@@ -33,6 +30,7 @@ class MessageServiceTest extends DemoApplicationTests {
         assertEquals(expectedResult, actualResult);
     }
 
+    @Test
     private SendMessage makeMessage(String text) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(1083113433L);
