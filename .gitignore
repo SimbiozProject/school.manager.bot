@@ -26,4 +26,8 @@ hs_err_pid*
 target/
 demo.iml
 
+
 src/main/resources/application.properties
+
+src/main/resources/application.properties
+
