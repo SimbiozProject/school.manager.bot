@@ -1,5 +1,6 @@
 package com.example.telegramBot.student.states;
-
+//Для данной реализации не используется
+/*
 import com.example.telegramBot.model.Student;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -20,4 +21,5 @@ public class StudentBotContext {
         return update;
     }
 }
+*/
 

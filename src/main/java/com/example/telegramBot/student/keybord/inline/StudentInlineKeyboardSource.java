@@ -22,6 +22,13 @@ public class StudentInlineKeyboardSource {
         InlineKeyboardButton thirdKeyboardButton = new InlineKeyboardButton().setText(ANSWER_OPTIONS[numberOfQuestion][2]);
         InlineKeyboardButton fourthKeyboardButton = new InlineKeyboardButton().setText(ANSWER_OPTIONS[numberOfQuestion][3]);
 
+
+
+        firstKeyboardButton.setCallbackData("Answer accepted");
+        secondKeyboardButton.setCallbackData("Answer accepted");
+        thirdKeyboardButton.setCallbackData("Answer accepted");
+        fourthKeyboardButton.setCallbackData("Answer accepted");
+
         List<InlineKeyboardButton> keyboardFirstRow = new ArrayList<>();
         keyboardFirstRow.add(firstKeyboardButton);
         List<InlineKeyboardButton> keyboardSecondRow = new ArrayList<>();
@@ -32,6 +39,11 @@ public class StudentInlineKeyboardSource {
         keyboardFourthRow.add(fourthKeyboardButton);
 
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
+        keyboard.add(keyboardFirstRow);
+        keyboard.add(keyboardSecondRow);
+        keyboard.add(keyboardThirdRow);
+        keyboard.add(keyboardFourthRow);
+
         inlineKeyboardMarkup.setKeyboard(keyboard);
 
         return inlineKeyboardMarkup;

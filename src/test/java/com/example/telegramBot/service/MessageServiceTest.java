@@ -23,7 +23,7 @@ class MessageServiceTest extends TelegramBotApplicationTests {
     @Autowired
     MessageService messageService;
 
-    @Test
+   /* @Test
     void onUnknownReceived() throws IOException {
         Update update = objectMapper.readValue(new File("src/test/resources/update.json"), Update.class);
         SendMessage actualResult = messageService.onUpdateReceived(update);
@@ -56,6 +56,6 @@ class MessageServiceTest extends TelegramBotApplicationTests {
         sendMessage.setChatId(551522843L);
         sendMessage.setText(text);
         return sendMessage;
-    }
+    }*/
 
 }

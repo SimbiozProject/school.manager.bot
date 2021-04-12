@@ -4,7 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+//Для данной реализации не используется
+/*
 @Data
 @Builder
 @AllArgsConstructor
@@ -16,3 +17,4 @@ public class Student {
     private String patronymic;
     private User user;
 }
+*/

@@ -1,7 +1,8 @@
 package com.example.telegramBot.model;
 
-public enum Role {
+//Для данной реализации не используется
+/*public enum Role {
     ADMIN,
     TEACHER,
     STUDENT;
-}
+}*/

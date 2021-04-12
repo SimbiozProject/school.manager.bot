@@ -12,7 +12,7 @@ public class MessageService {
 
     @Autowired TelegramBot telegramBot;
 
-    public SendMessage onUpdateReceived(Update update) {
+    /*public SendMessage onUpdateReceived(Update update) {
         SendMessage sendMessage = new SendMessage();
         if(update != null) {
             Message message = update.getMessage();
@@ -30,9 +30,9 @@ public class MessageService {
             }
         }
         return sendMessage.setText("Do no!");
-    }
+    }*/
 
-    public Message sendMessage(SendMessage sendMessage) throws TelegramApiException {
+    /*public Message sendMessage(SendMessage sendMessage) throws TelegramApiException {
         return telegramBot.execute(sendMessage);
-    }
+    }*/
 }

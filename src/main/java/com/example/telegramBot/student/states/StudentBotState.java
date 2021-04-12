@@ -1,13 +1,13 @@
 package com.example.telegramBot.student.states;
-
-import com.example.telegramBot.interfaces.BotState;
+//Для данной реализации не используется
+/*import com.example.telegramBot.interfaces.BotState;
 import com.example.telegramBot.service.MessageService;
 import com.example.telegramBot.service.StudentMessageService;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;*/
 
-public enum StudentBotState implements BotState<StudentBotState, StudentBotContext> {
+//public enum StudentBotState implements BotState<StudentBotState, StudentBotContext> {
 
-    EnglishTestExecution(false){
+    /*EnglishTestExecution(false){
         @Override
         public void enter(StudentBotContext studentBotContext) throws TelegramApiException {
             studentMessageService.sendEnglishTestExecution(studentBotContext.getStudent());
@@ -27,6 +27,6 @@ public enum StudentBotState implements BotState<StudentBotState, StudentBotConte
 
     StudentBotState(Boolean isInputNeeded) {
         this.isInputNeeded = isInputNeeded;
-    }
-}
+    }*/
+//}
 

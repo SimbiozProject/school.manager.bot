@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@Data
+//Для данной реализации не используется
+/*@Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,4 +26,4 @@ public class User {
 
 
 
-}
+}*/
