@@ -22,8 +22,6 @@ public class StudentInlineKeyboardSource {
         InlineKeyboardButton thirdKeyboardButton = new InlineKeyboardButton().setText(ANSWER_OPTIONS[numberOfQuestion][2]);
         InlineKeyboardButton fourthKeyboardButton = new InlineKeyboardButton().setText(ANSWER_OPTIONS[numberOfQuestion][3]);
 
-
-
         firstKeyboardButton.setCallbackData("Answer accepted");
         secondKeyboardButton.setCallbackData("Answer accepted");
         thirdKeyboardButton.setCallbackData("Answer accepted");
@@ -31,19 +29,30 @@ public class StudentInlineKeyboardSource {
 
         List<InlineKeyboardButton> keyboardFirstRow = new ArrayList<>();
         keyboardFirstRow.add(firstKeyboardButton);
+        keyboardFirstRow.add(secondKeyboardButton);
+
         List<InlineKeyboardButton> keyboardSecondRow = new ArrayList<>();
-        keyboardSecondRow.add(secondKeyboardButton);
-        List<InlineKeyboardButton> keyboardThirdRow = new ArrayList<>();
-        keyboardThirdRow.add(thirdKeyboardButton);
-        List<InlineKeyboardButton> keyboardFourthRow = new ArrayList<>();
-        keyboardFourthRow.add(fourthKeyboardButton);
+        keyboardSecondRow.add(thirdKeyboardButton);
+        keyboardSecondRow.add(fourthKeyboardButton);
 
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
         keyboard.add(keyboardFirstRow);
         keyboard.add(keyboardSecondRow);
-        keyboard.add(keyboardThirdRow);
-        keyboard.add(keyboardFourthRow);
 
+        inlineKeyboardMarkup.setKeyboard(keyboard);
+
+        return inlineKeyboardMarkup;
+    }
+
+    public InlineKeyboardMarkup getStartTest() {
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton firstKeyboardButton = new InlineKeyboardButton().setText("start test");
+        firstKeyboardButton.setCallbackData("Answer accepted");
+        List<InlineKeyboardButton> keyboardFirstRow = new ArrayList<>();
+        keyboardFirstRow.add(firstKeyboardButton);
+        List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
+        keyboard.add(keyboardFirstRow);
         inlineKeyboardMarkup.setKeyboard(keyboard);
 
         return inlineKeyboardMarkup;
