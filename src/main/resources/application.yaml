@@ -1,0 +1,13 @@
+bot:
+  name: olgaz_botman_bot
+  token: 1673083861:AAH64PVUL7qJG2OlfQgFWNwVaZQbucLq8dU
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-54-247-158-179.eu-west-1.compute.amazonaws.com:5432/d2oa97cnhc91os?user=ylzfziaviwfrjt&password=651c08be011e9c20cd7b1550a5b3d9295c11e2a7e65899e6e4fcde105a3f2f2b
+    driver-class-name: org.postgresql.Driver
+    initialization-mode: never
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
