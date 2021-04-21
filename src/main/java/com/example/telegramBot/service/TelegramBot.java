@@ -10,7 +10,7 @@ import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import com.example.telegramBot.command.CommandContainer;
+import com.example.telegramBot.command.CommandHandler;
 import com.example.telegramBot.service.SendBotMessageServiceRealisation;
 import com.example.telegramBot.command.CommandName;
 
@@ -33,11 +33,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     public static String COMMAND_PREFIX = "/";
 
-    private final CommandContainer commandContainer;
+    private final CommandHandler commandHandler;
 
     @Autowired
     public TelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceRealisation(this));
+        this.commandHandler = new CommandHandler(new SendBotMessageServiceRealisation(this));
     }
 
     @Override
@@ -47,10 +47,10 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (message.startsWith(COMMAND_PREFIX)) {
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
 
-                commandContainer.retrieveCommand(commandIdentifier).execute(update);
+                commandHandler.retrieveCommand(commandIdentifier).execute(update);
 
             } else {
-                commandContainer.retrieveCommand(NO.getCommandName()).execute(update);
+                commandHandler.retrieveCommand(NO.getCommandName()).execute(update);
             }
         }
     }
