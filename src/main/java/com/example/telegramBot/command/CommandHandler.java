@@ -6,12 +6,12 @@ import com.example.telegramBot.service.SendBotMessageService;
 
 import static com.example.telegramBot.command.CommandName.*;
 
-public class CommandContainer {
+public class CommandHandler {
 
 private final ImmutableMap<String,Command>commandMap;
 private final Command unknownComm;
 
-    public CommandContainer(SendBotMessageService sendBotMessageService) {
+    public CommandHandler(SendBotMessageService sendBotMessageService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
                 .put(START.getCommandName(), new StartComm(sendBotMessageService))
