@@ -1,11 +1,15 @@
 package com.example.telegramBot.model.id;
 
 import com.example.telegramBot.model.enums.Role;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     private Integer id;
@@ -33,5 +37,6 @@ public class User {
     public Boolean hasLastBotMessage() {
         return botLastMessageId != null;
     }
+
 
 }

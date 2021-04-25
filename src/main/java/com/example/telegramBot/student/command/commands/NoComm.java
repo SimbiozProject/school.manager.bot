@@ -1,6 +1,6 @@
-package com.example.telegramBot.command;
+package com.example.telegramBot.student.command.commands;
 
-import com.example.telegramBot.service.SendBotMessageService;
+import com.example.telegramBot.student.service.SendBotMessageService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class NoComm  implements Command {

@@ -1,4 +1,4 @@
-package com.example.telegramBot.command;
+package com.example.telegramBot.student.command;
 
 public enum CommandName {
 
@@ -6,8 +6,9 @@ public enum CommandName {
     HELP ("/help"),
     HELLO ("/hello"),
     SETTINGS ("/settings"),
-    NO("nocommand");
-
+    NO("nocommand"),
+    TEST("inline.test"),
+    TEST_ANSWER("inline.tests answer");
     private final String commandName;
 
     CommandName(String commandName) {
