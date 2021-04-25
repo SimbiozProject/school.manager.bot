@@ -1,18 +1,14 @@
 package com.example.telegramBot.service;
 
-import com.example.telegramBot.command.UnknownComm;
+import com.example.telegramBot.model.id.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import com.example.telegramBot.command.CommandHandler;
-import com.example.telegramBot.service.SendBotMessageServiceRealisation;
-import com.example.telegramBot.command.CommandName;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,6 +38,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
+
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
             if (message.startsWith(COMMAND_PREFIX)) {
@@ -53,7 +50,25 @@ public class TelegramBot extends TelegramLongPollingBot {
                 commandHandler.retrieveCommand(NO.getCommandName()).execute(update);
             }
         }
+        Long userId = getUserId(update);
+        User user = new User();
+
+        //todo connect to database
+
+        commandHandler.handle(update);
     }
+
+    private Long getUserId(Update update) {
+        if (update.hasMessage()) {
+            return update.getMessage().getFrom().getId().longValue();
+        } else if (update.hasCallbackQuery()) {
+            return update.getCallbackQuery().getFrom().getId().longValue();
+        } else if (update.hasEditedMessage()) {
+            return update.getEditedMessage().getFrom().getId().longValue();
+        }
+        return null;
+    }
+
     private void saveJson(Update update) {
        try {
             objectMapper.writeValue(new File("src/test/resources/update.json"), update);
