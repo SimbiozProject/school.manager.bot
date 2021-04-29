@@ -35,6 +35,9 @@ private final Command unknownComm;
 
         } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
             String commandIdentifier = update.getCallbackQuery().getData().trim();
+            if(commandIdentifier.startsWith("english")) {
+                commandIdentifier = "english";
+            }
             retrieveCommand(commandIdentifier).execute(update);
         }
     }

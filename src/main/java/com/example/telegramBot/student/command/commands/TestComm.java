@@ -7,12 +7,11 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 
 import static com.example.telegramBot.student.repositiry.TestAnswerOptions.answers;
 import static com.example.telegramBot.student.repositiry.TestAnswerOptions.numberOfQuestion;
+import static com.example.telegramBot.student.repositiry.TestCorrectAnswers.ANSWERS_ON_QUESTIONS;
 import static com.example.telegramBot.student.repositiry.TestQuestions.TEST_QUESTIONS;
 
 
 public class TestComm implements Command {
-
-    public static final String RESULT = "Тест пройден";
 
     private final SendBotMessageService sendBotMessageService;
 
@@ -27,9 +26,11 @@ public class TestComm implements Command {
 
         String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
 
-        answers.add(update.getCallbackQuery().getInlineMessageId());//записываем ответы ? НО нет. Как?
+        if (update.getCallbackQuery().getData().startsWith("english")) {
+            answers.add(update.getCallbackQuery().getData().replace("english", ""));
+        }
 
-        if (numberOfQuestion < 25) {
+        if (numberOfQuestion < TEST_QUESTIONS.size()) {
 
             ReplyKeyboard answers = studentInlineKeyboardSource.getAnswerOptionsInlineMarkup(numberOfQuestion);
             String question = TEST_QUESTIONS.get(numberOfQuestion);
@@ -37,16 +38,27 @@ public class TestComm implements Command {
             numberOfQuestion += 1;
 
         } else {
-            //какой-то метод, который считает процент
-            sendBotMessageService.sendMessage(chatId, RESULT);
+            int count = 0;
+            for (int i = 0; i < answers.size(); i++) {
+                if (answers.get(i).equals(ANSWERS_ON_QUESTIONS.get(i))) {
+                    count++;
+                }
+            }
+            int result = count * 100 / TEST_QUESTIONS.size();
+
+            sendBotMessageService.sendMessage(chatId, String.format("Тест пройден. Ваш результат %d %%", result));
         }
 
     }
-//todo 1. добавить верям на выполение теста,
-// 2. записать куда-то выбранные ответы (как?), сравнить их с базой правильных,
-// 3. посчитать процент и вывести его на экран вместе с RESALT и отправить на e-mail или в бот преподавателю.
-// 4. ДОбавить кнопку Reply "ВЕрнуться в гланое меню"
-// (вылетает вместе с RESULT)
+//todo
+// 1. добавить верям на выполение теста,
+// 2. записать куда-то выбранные ответы, сравнить их с базой правильных - выполнено, но без БД.
+// 3. посчитать процент и вывести его на экран вместе с RESALT - выполнено
+// 4. отправить на e-mail
+// 5. отправить в бот преподавателю.
+// 6. добавить кнопку Reply "Вернуться в гланое меню" (вылетает вместе с RESULT)
+// 7. убрать баг когда можно нажать на ответ из другого вопоса
+// 8. отредактировать правильные ответы
 
 
 
