@@ -3,6 +3,7 @@ package com.example.telegramBot.student.service;
 import com.example.telegramBot.TelegramBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -12,6 +13,7 @@ public class SendBotMessageServiceRealisation implements SendBotMessageService {
 
     @Autowired
     public SendBotMessageServiceRealisation(TelegramBot telegramBot) {
+
         this.telegramBot = telegramBot;
     }
 
@@ -46,6 +48,18 @@ public class SendBotMessageServiceRealisation implements SendBotMessageService {
         }
     }
 
+    @Override
+    public void deleteMessage(String chatId, Integer message_id) {
+        DeleteMessage deleteMessage = new DeleteMessage();
+        deleteMessage.setChatId(chatId);
+        deleteMessage.setMessageId(message_id);
+        try {
+            telegramBot.execute(deleteMessage);
+
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

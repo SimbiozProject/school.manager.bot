@@ -22,10 +22,10 @@ public class StudentInlineKeyboardSource {
         InlineKeyboardButton thirdKeyboardButton = new InlineKeyboardButton().setText(ANSWER_OPTIONS[number][2]);
         InlineKeyboardButton fourthKeyboardButton = new InlineKeyboardButton().setText(ANSWER_OPTIONS[number][3]);
 
-        firstKeyboardButton.setCallbackData("inline.tests answer");
-        secondKeyboardButton.setCallbackData("inline.tests answer");
-        thirdKeyboardButton.setCallbackData("inline.tests answer");
-        fourthKeyboardButton.setCallbackData("inline.tests answer");
+        firstKeyboardButton.setCallbackData("english" + ANSWER_OPTIONS[number][0]);
+        secondKeyboardButton.setCallbackData("english" + ANSWER_OPTIONS[number][1]);
+        thirdKeyboardButton.setCallbackData("english" + ANSWER_OPTIONS[number][2]);
+        fourthKeyboardButton.setCallbackData("english" + ANSWER_OPTIONS[number][3]);
 
         List<InlineKeyboardButton> keyboardFirstRow = new ArrayList<>();
         keyboardFirstRow.add(firstKeyboardButton);

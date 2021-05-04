@@ -8,7 +8,7 @@ public enum CommandName {
     SETTINGS ("/settings"),
     NO("nocommand"),
     TEST("inline.test"),
-    TEST_ANSWER("inline.tests answer");
+    TEST_ANSWER("english");
     private final String commandName;
 
     CommandName(String commandName) {

@@ -9,8 +9,8 @@ import static com.example.telegramBot.student.command.CommandName.*;
 
 public class StudentCommandHandler {
 
-private final ImmutableMap<String, Command>commandMap;
-private final Command unknownComm;
+    private final ImmutableMap<String, Command> commandMap;
+    private final Command unknownComm;
 
     public StudentCommandHandler(SendBotMessageService sendBotMessageService) {
 
@@ -34,13 +34,20 @@ private final Command unknownComm;
             retrieveCommand(commandIdentifier).execute(update);
 
         } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
-            String commandIdentifier = update.getCallbackQuery().getData().trim();
+            String commandIdentifier = ifTheTest(update.getCallbackQuery().getData().trim());
             retrieveCommand(commandIdentifier).execute(update);
         }
     }
 
     public Command retrieveCommand(String commandIdentifier) {
         return commandMap.getOrDefault(commandIdentifier, unknownComm);
+    }
+
+    public String ifTheTest(String str) {
+        if (str.startsWith("english")) {
+            str = "english";
+        }
+        return str;
     }
 
 }
