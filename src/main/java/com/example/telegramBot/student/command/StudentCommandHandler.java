@@ -22,6 +22,7 @@ public class StudentCommandHandler {
                 .put(NO.getCommandName(), new NoComm(sendBotMessageService))
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
                 .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))
+                .put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
