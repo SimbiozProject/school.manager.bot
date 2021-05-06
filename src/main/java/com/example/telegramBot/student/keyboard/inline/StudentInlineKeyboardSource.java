@@ -64,9 +64,9 @@ public class StudentInlineKeyboardSource {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
         InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("1.Начальная проверка уровня").setCallbackData("initial.level.check");
-        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("2. Запись на пробное занятие").setCallbackData("sign.up.for.trial.lesson");
+        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("2.Запись на пробное занятие").setCallbackData("sign.up.for.trial.lesson");
         InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("3.Информация о курсе").setCallbackData("course.information");
-        InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("4. Купить курс").setCallbackData("buy.course");
+        InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("4.Купить курс").setCallbackData("buy.course");
 
         List<InlineKeyboardButton> firstKeyboard = new ArrayList<>();
         firstKeyboard.add(firstButton);
