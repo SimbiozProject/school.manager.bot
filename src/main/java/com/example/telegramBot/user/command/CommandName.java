@@ -7,9 +7,10 @@ public enum CommandName {
     HELLO ("/hello"),
     SETTINGS ("/settings"),
     NO("nocommand"),
-    TEST("inline.test"),
+    TEST("initial.level.check"),
     TEST_ANSWER("english"),
     MAIN_MENU("shared.contact");
+
     private final String commandName;
 
     CommandName(String commandName) {
