@@ -1,4 +1,4 @@
-package com.example.telegramBot.student.repositiry;
+package com.example.telegramBot.user.repositiry;
 
 
 

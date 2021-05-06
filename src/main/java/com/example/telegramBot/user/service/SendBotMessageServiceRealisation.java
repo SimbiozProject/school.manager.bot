@@ -1,4 +1,4 @@
-package com.example.telegramBot.student.service;
+package com.example.telegramBot.user.service;
 
 import com.example.telegramBot.TelegramBot;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,14 +1,14 @@
-package com.example.telegramBot.student.command.commands;
+package com.example.telegramBot.user.command.commands;
 
-import com.example.telegramBot.student.service.SendBotMessageService;
-import com.example.telegramBot.student.keyboard.inline.StudentInlineKeyboardSource;
+import com.example.telegramBot.user.service.SendBotMessageService;
+import com.example.telegramBot.user.keyboard.inline.UserInlineKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 
-import static com.example.telegramBot.student.repositiry.TestAnswerOptions.answers;
-import static com.example.telegramBot.student.repositiry.TestAnswerOptions.numberOfQuestion;
-import static com.example.telegramBot.student.repositiry.TestCorrectAnswers.ANSWERS_ON_QUESTIONS;
-import static com.example.telegramBot.student.repositiry.TestQuestions.TEST_QUESTIONS;
+import static com.example.telegramBot.user.repositiry.TestAnswerOptions.answers;
+import static com.example.telegramBot.user.repositiry.TestAnswerOptions.numberOfQuestion;
+import static com.example.telegramBot.user.repositiry.TestCorrectAnswers.ANSWERS_ON_QUESTIONS;
+import static com.example.telegramBot.user.repositiry.TestQuestions.TEST_QUESTIONS;
 
 
 public class TestComm implements Command {
@@ -16,7 +16,7 @@ public class TestComm implements Command {
     private final SendBotMessageService sendBotMessageService;
 
 
-    StudentInlineKeyboardSource studentInlineKeyboardSource = new StudentInlineKeyboardSource();
+    UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
 
     public TestComm(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
@@ -41,7 +41,7 @@ public class TestComm implements Command {
     }
 
     private void createAndSendNextQuestion(String chatId) {
-        ReplyKeyboard answers = studentInlineKeyboardSource.getAnswerOptionsInlineMarkup(numberOfQuestion);
+        ReplyKeyboard answers = userInlineKeyboardSource.getAnswerOptionsInlineMarkup(numberOfQuestion);
         String question = TEST_QUESTIONS.get(numberOfQuestion);
         sendBotMessageService.sendMessage(chatId, question, answers);
         numberOfQuestion++;

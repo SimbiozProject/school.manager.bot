@@ -1,6 +1,6 @@
-package com.example.telegramBot.student.command.commands;
+package com.example.telegramBot.user.command.commands;
 
-import com.example.telegramBot.student.service.SendBotMessageService;
+import com.example.telegramBot.user.service.SendBotMessageService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class HelpComm implements Command {

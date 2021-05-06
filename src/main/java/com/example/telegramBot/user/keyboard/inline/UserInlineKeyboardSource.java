@@ -1,4 +1,4 @@
-package com.example.telegramBot.student.keyboard.inline;
+package com.example.telegramBot.user.keyboard.inline;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -6,12 +6,12 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.telegramBot.student.repositiry.TestAnswerOptions.ANSWER_OPTIONS;
+import static com.example.telegramBot.user.repositiry.TestAnswerOptions.ANSWER_OPTIONS;
 
 
-public class StudentInlineKeyboardSource {
+public class UserInlineKeyboardSource {
 
-    public StudentInlineKeyboardSource() {
+    public UserInlineKeyboardSource() {
     }
 
     public InlineKeyboardMarkup getAnswerOptionsInlineMarkup(Integer number) {
