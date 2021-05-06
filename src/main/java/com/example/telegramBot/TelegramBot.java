@@ -1,7 +1,8 @@
 package com.example.telegramBot;
 
 import com.example.telegramBot.model.id.User;
-import com.example.telegramBot.user.service.SendBotMessageServiceRealisation;
+import com.example.telegramBot.service.SendBotMessageServiceRealisation;
+import com.example.telegramBot.student.command.StudentCommandHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
@@ -20,11 +21,14 @@ public class TelegramBot extends TelegramLongPollingBot {
     private String botToken;
 
     private final UserCommandHandler userCommandHandler;
-
+    private final StudentCommandHandler studentCommandHandler;
     @Autowired
     public TelegramBot() {
         this.userCommandHandler = new UserCommandHandler(new SendBotMessageServiceRealisation(this));
+        this.studentCommandHandler = new StudentCommandHandler(new SendBotMessageServiceRealisation(this));
     }
+
+
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -35,6 +39,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         //todo connect to database
 
         userCommandHandler.handle(update);
+        studentCommandHandler.handle(update);
     }
 
     private Long getUserId(Update update) {
