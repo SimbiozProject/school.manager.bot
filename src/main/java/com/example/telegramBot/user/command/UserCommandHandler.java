@@ -1,18 +1,18 @@
-package com.example.telegramBot.student.command;
+package com.example.telegramBot.user.command;
 
-import com.example.telegramBot.student.service.SendBotMessageService;
-import com.example.telegramBot.student.command.commands.*;
+import com.example.telegramBot.user.service.SendBotMessageService;
+import com.example.telegramBot.user.command.commands.*;
 import com.google.common.collect.ImmutableMap;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import static com.example.telegramBot.student.command.CommandName.*;
+import static com.example.telegramBot.user.command.CommandName.*;
 
-public class StudentCommandHandler {
+public class UserCommandHandler {
 
     private final ImmutableMap<String, Command> commandMap;
     private final Command unknownComm;
 
-    public StudentCommandHandler(SendBotMessageService sendBotMessageService) {
+    public UserCommandHandler(SendBotMessageService sendBotMessageService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
                 .put(START.getCommandName(), new StartComm(sendBotMessageService))

@@ -1,4 +1,4 @@
-package com.example.telegramBot.student.command;
+package com.example.telegramBot.user.command;
 
 public enum CommandName {
 
