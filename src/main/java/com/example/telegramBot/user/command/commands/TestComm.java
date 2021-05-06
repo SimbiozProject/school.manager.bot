@@ -1,6 +1,6 @@
 package com.example.telegramBot.user.command.commands;
 
-import com.example.telegramBot.user.service.SendBotMessageService;
+import com.example.telegramBot.service.SendBotMessageService;
 import com.example.telegramBot.user.keyboard.inline.UserInlineKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
