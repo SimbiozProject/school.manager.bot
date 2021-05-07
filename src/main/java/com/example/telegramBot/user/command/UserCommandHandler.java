@@ -30,10 +30,14 @@ public class UserCommandHandler {
 
 
     public void handle(Update update) {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            String commandIdentifier = update.getMessage().getText();
-            retrieveCommand(commandIdentifier).execute(update);
-
+        if (update.hasMessage()) {
+            if (update.getMessage().hasText()) {
+                String commandIdentifier = update.getMessage().getText();
+                retrieveCommand(commandIdentifier).execute(update);
+            } else if (update.getMessage().hasContact()) {
+                String commandIdentifier = ifTheContact(update.getMessage().getContact().getPhoneNumber());
+                retrieveCommand(commandIdentifier).execute(update);
+            }
         } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
             String commandIdentifier = ifTheTest(update.getCallbackQuery().getData().trim());
             retrieveCommand(commandIdentifier).execute(update);
@@ -47,6 +51,13 @@ public class UserCommandHandler {
     public String ifTheTest(String str) {
         if (str.startsWith("english")) {
             str = "english";
+        }
+        return str;
+    }
+
+    public String ifTheContact(String str) {
+        if (str.startsWith("+")) {
+            str = "shared.contact";
         }
         return str;
     }
