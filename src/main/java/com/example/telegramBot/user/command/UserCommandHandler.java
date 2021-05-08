@@ -15,14 +15,15 @@ public class UserCommandHandler {
     public UserCommandHandler(SendBotMessageService sendBotMessageService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
-                .put(START.getCommandName(), new StartComm(sendBotMessageService))
+                //.put(START.getCommandName(), new StartComm(sendBotMessageService))
                 .put(HELLO.getCommandName(), new HelloComm(sendBotMessageService))
                 .put(HELP.getCommandName(), new HelpComm(sendBotMessageService))
                 .put(SETTINGS.getCommandName(), new SettingsComm(sendBotMessageService))
                 .put(NO.getCommandName(), new NoComm(sendBotMessageService))
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
                 .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))
-                .put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                //.put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(START.getCommandName(), new MainMenuComm(sendBotMessageService))
                 .put(SELECTION_COURSE.getCommandName(), new SelectionCourseComm(sendBotMessageService))
                 .put(RETURN_TO_MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
                 //.put(INFO.getCommandName(), new InfoComm(sendBotMessageService))
