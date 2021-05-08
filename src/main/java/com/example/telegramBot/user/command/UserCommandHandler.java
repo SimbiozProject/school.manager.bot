@@ -23,6 +23,8 @@ public class UserCommandHandler {
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
                 .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))
                 .put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(SELECTION_COURSE.getCommandName(), new SelectionCourseComm(sendBotMessageService))
+                .put(RETURN_TO_MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);

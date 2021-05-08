@@ -31,4 +31,20 @@ public class UserReplyKeyboardSource {
         replyKeyboardMarkup.setKeyboard(keyboard);
         return replyKeyboardMarkup;
     }
+
+    public ReplyKeyboardMarkup getReturnToMainMenu() {
+        final ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+        replyKeyboardMarkup.setSelective(false);
+        replyKeyboardMarkup.setResizeKeyboard(true);
+        replyKeyboardMarkup.setOneTimeKeyboard(true);
+
+        List<KeyboardRow> keyboard = new ArrayList<>();
+        KeyboardRow returnToMainMenuRow = new KeyboardRow();
+        returnToMainMenuRow.add(new KeyboardButton("Вернуться в главное меню"));
+        keyboard.add(returnToMainMenuRow);
+        replyKeyboardMarkup.setKeyboard(keyboard);
+        return replyKeyboardMarkup;
+    }
+
+
 }
