@@ -28,7 +28,10 @@ public class TestComm implements Command {
         String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
         Integer message_id = update.getCallbackQuery().getMessage().getMessageId();
 
-        sendBotMessageService.deleteMessage(chatId, message_id);
+        if (numberOfQuestion > 0) {
+            sendBotMessageService.deleteMessage(chatId, message_id);
+        }
+
 
         addTheAnswerIntoList(update);
 

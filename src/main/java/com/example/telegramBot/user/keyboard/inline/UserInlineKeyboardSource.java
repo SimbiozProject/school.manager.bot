@@ -49,7 +49,7 @@ public class UserInlineKeyboardSource {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
         InlineKeyboardButton firstKeyboardButton = new InlineKeyboardButton().setText("Start test");
-        firstKeyboardButton.setCallbackData("inline.test");
+        firstKeyboardButton.setCallbackData("english");
         List<InlineKeyboardButton> keyboardFirstRow = new ArrayList<>();
         keyboardFirstRow.add(firstKeyboardButton);
         List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
