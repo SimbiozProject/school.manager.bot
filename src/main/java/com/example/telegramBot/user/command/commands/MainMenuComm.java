@@ -10,7 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 
 import static com.example.telegramBot.user.repositiry.Contacts.contacts;
 
-public class MainMenuComm implements Command{
+public class MainMenuComm implements Command {
 
     private final UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
     private final UserReplyKeyboardSource userReplyKeyboardSource = new UserReplyKeyboardSource();
@@ -25,17 +25,18 @@ public class MainMenuComm implements Command{
 
     @Override
     public void execute(Update update) {
-        //временный вариант получения контакта
-        String phoneNumber = update.getMessage().getContact().getPhoneNumber();
-        Integer userID = update.getMessage().getContact().getUserID();
-        contacts.put(userID, phoneNumber);
-
-        String chatId = update.getMessage().getChatId().toString();
-        Integer message_id = update.getMessage().getMessageId();
-        sendBotMessageService.deleteMessage(chatId, message_id);
-        userReplyKeyboardSource.getPhoneNumberReplyKeyboard().getKeyboard().clear();
+        //временный вариант получ ения контакта
+//        String phoneNumber = update.getMessage().getContact().getPhoneNumber();
+//        Integer userID = update.getMessage().getContact().getUserID();
+//        contacts.put(userID, phoneNumber);
+//
+//        String chatId = update.getMessage().getChatId().toString();
+//        Integer message_id = update.getMessage().getMessageId();
+//        sendBotMessageService.deleteMessage(chatId, message_id);
+//        userReplyKeyboardSource.getPhoneNumberReplyKeyboard().getKeyboard().clear();
 
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), MAIN_MENU_MESSAGE, mainMenuKeyboard);
+
 
     }
 }

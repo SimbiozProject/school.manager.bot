@@ -4,6 +4,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.example.telegramBot.user.repositiry.TestAnswerOptions.ANSWER_OPTIONS;
@@ -85,6 +86,45 @@ public class UserInlineKeyboardSource {
         inlineKeyboardMarkup.setKeyboard(keyboardRows);
 
         return inlineKeyboardMarkup;
+    }
+
+    public InlineKeyboardMarkup getSelectCourseBoardLevelZero() {
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Level 0. More info").setCallbackData("level.zero");
+        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("Купить").setCallbackData("buy.course.level.zero");
+
+        List<InlineKeyboardButton> keyboardButtonsRow1 = new ArrayList<>();
+        keyboardButtonsRow1.add(firstButton);
+        keyboardButtonsRow1.add(secondButton);
+
+        List<List<InlineKeyboardButton>> keyboardRow1 = new ArrayList<>();
+        keyboardRow1.add(keyboardButtonsRow1);
+
+        inlineKeyboardMarkup.setKeyboard(keyboardRow1);
+
+        return inlineKeyboardMarkup;
+    }
+
+    public InlineKeyboardMarkup getSelectCourseBoardLevelAdvanced() {
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("Level advanced. More info").setCallbackData("level.advanced");
+        InlineKeyboardButton forthButton = new InlineKeyboardButton().setText("Купить").setCallbackData("buy.course.level.advanced");
+
+        List<InlineKeyboardButton> keyboardButtonsRow2 = new ArrayList<>();
+        keyboardButtonsRow2.add(thirdButton);
+        keyboardButtonsRow2.add(forthButton);
+
+        List<List<InlineKeyboardButton>> keyboardRow2 = new ArrayList<>();
+        keyboardRow2.add(keyboardButtonsRow2);
+
+        inlineKeyboardMarkup.setKeyboard(keyboardRow2);
+
+        return inlineKeyboardMarkup;
+        //return new SendMessage().setChatId(chatId).setText("Пример").setReplyMarkup(inlineKeyboardMarkup);
     }
 }
 
