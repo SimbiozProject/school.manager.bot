@@ -7,8 +7,8 @@ public enum CommandName {
     HELLO("/hello"),
     SETTINGS("/settings"),
     NO("nocommand"),
-    TEST("initial.level.check"),
-    TEST_ANSWER("english"),
+    START_TEST("initial.level.check"),
+    TEST("english"),
     MAIN_MENU("shared.contact"),
     SELECTION_COURSE("buy.course"),
     RETURN_TO_MAIN_MENU("Вернуться в главное меню");
