@@ -13,8 +13,9 @@ import static com.example.telegramBot.user.repositiry.Contacts.contacts;
 public class MainMenuComm implements Command {
 
     private final UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
-    private final UserReplyKeyboardSource userReplyKeyboardSource = new UserReplyKeyboardSource();
-    private final static String MAIN_MENU_MESSAGE = "Да выбери уже что-нить \ud83d\ude34 \ud83e\udd28 ))).";
+    //private final UserReplyKeyboardSource userReplyKeyboardSource = new UserReplyKeyboardSource();
+    //private final static String MAIN_MENU_MESSAGE = "Да выбери уже что-нить \ud83d\ude34 \ud83e\udd28 ))).";
+    public final static String MAIN_MENU_MESSAGE = "Здравствуйте, если вы это читаете значит вы решили выучить английски, а мы, WorldLand, поможем Вам в этом!";
     private final ReplyKeyboard mainMenuKeyboard = userInlineKeyboardSource.getMainMenuKeyboard();
 
     private final SendBotMessageService sendBotMessageService;
