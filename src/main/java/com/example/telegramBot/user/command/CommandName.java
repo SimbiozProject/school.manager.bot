@@ -11,7 +11,12 @@ public enum CommandName {
     TEST("english"),
     MAIN_MENU("shared.contact"),
     SELECTION_COURSE("buy.course"),
-    RETURN_TO_MAIN_MENU("Вернуться в главное меню");
+    RETURN_TO_MAIN_MENU("Вернуться в главное меню"),
+    GROUPS("groups"),
+    COST("cost"),
+    INFO("course.information"),
+    FAQ("faq"),
+    ABOUT_US("about.us");
 
     private final String commandName;
 
