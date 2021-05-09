@@ -3,8 +3,9 @@ package com.example.telegramBot.student.command;
 import com.example.telegramBot.service.SendBotMessageService;
 import com.example.telegramBot.student.command.commands.*;
 import com.google.common.collect.ImmutableMap;
+import org.telegram.telegrambots.meta.api.objects.Update;
 
-import static com.example.telegramBot.user.command.CommandName.*;
+import static com.example.telegramBot.student.command.CommandName.HOME_WORK;
 
 public class StudentCommandHandler {
 
@@ -18,6 +19,28 @@ public class StudentCommandHandler {
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
+    }
+
+    public void handle(Update update) {
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            String commandIdentifier = update.getMessage().getText();
+            retrieveCommand(commandIdentifier).execute(update);
+
+        } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
+            String commandIdentifier = ifTheTest(update.getCallbackQuery().getData().trim());
+            retrieveCommand(commandIdentifier).execute(update);
+        }
+    }
+
+    public Command retrieveCommand(String commandIdentifier) {
+        return commandMap.getOrDefault(commandIdentifier, unknownComm);
+    }
+
+    public String ifTheTest(String str) {
+        if (str.startsWith("english")) {
+            str = "english";
+        }
+        return str;
     }
 
 
