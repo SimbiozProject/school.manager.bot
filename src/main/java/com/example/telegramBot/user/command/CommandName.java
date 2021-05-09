@@ -9,8 +9,7 @@ public enum CommandName {
     NO("nocommand"),
     TEST("initial.level.check"),
     TEST_ANSWER("english"),
-    MAIN_MENU("shared.contact"),
-    HOME_WORK("homework");
+    MAIN_MENU("shared.contact");
 
     private final String commandName;
 

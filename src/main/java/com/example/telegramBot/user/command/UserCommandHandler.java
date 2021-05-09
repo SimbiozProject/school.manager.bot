@@ -1,6 +1,7 @@
 package com.example.telegramBot.user.command;
 
 import com.example.telegramBot.service.SendBotMessageService;
+import com.example.telegramBot.student.command.commands.HomeWorkComm;
 import com.example.telegramBot.user.command.commands.*;
 import com.google.common.collect.ImmutableMap;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -23,7 +24,6 @@ public class UserCommandHandler {
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
                 .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))
                 .put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
-                .put(HOME_WORK. getCommandName(), new HomeWorkComm(sendBotMessageService))
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
