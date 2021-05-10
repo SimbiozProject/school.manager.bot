@@ -2,6 +2,7 @@ package com.example.telegramBot.user.command.commands;
 
 import com.example.telegramBot.service.SendBotMessageService;
 import com.example.telegramBot.user.keyboard.inline.UserInlineKeyboardSource;
+import com.example.telegramBot.user.keyboard.reply.UserReplyKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 
@@ -17,6 +18,9 @@ public class TestComm implements Command {
 
 
     UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
+
+    private final UserReplyKeyboardSource userReplyKeyboardSource = new UserReplyKeyboardSource();
+    public final ReplyKeyboard returnToMainMenu = userReplyKeyboardSource.getReturnToMainMenu();
 
     public TestComm(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
@@ -58,7 +62,8 @@ public class TestComm implements Command {
             }
         }
         int result = count * 100 / TEST_QUESTIONS.size();
-        sendBotMessageService.sendMessage(chatId, String.format("Тест пройден. Ваш результат %d %%", result));
+        sendBotMessageService.sendMessage(chatId, String.format("Тест пройден. Ваш результат %d %%", result), returnToMainMenu);
+
     }
 
     private void addTheAnswerIntoList(Update update) {
