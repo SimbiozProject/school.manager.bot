@@ -10,7 +10,8 @@ public class GroupsComm implements Command{
     private final SendBotMessageService sendBotMessageService;
     UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
 
-    public final static String GROUPS_PHOTO_URL = "https://memegenerator.net/img/instances/80672396/169-43.jpg";
+    public final static String GROUPS_PHOTO_URL = "https://i.pinimg.com/originals/39/74/57/3974572f4d12c67cb4d54f424a63877a.jpg";
+    public final static String GROUPS_MESSAGE = "Немного о наших группах";
     public final InlineKeyboardMarkup backToInfo = userInlineKeyboardSource.getBackToInfo();
 
 
@@ -21,6 +22,6 @@ public class GroupsComm implements Command{
     public void execute(Update update) {
         String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
         sendBotMessageService.sendPhoto(chatId, GROUPS_PHOTO_URL);
-        sendBotMessageService.sendMessage(chatId, backToInfo);
+        sendBotMessageService.sendMessage(chatId, GROUPS_MESSAGE, backToInfo);
     }
 }
