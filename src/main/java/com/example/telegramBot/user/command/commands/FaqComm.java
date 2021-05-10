@@ -5,22 +5,22 @@ import com.example.telegramBot.user.keyboard.inline.UserInlineKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 
-public class InfoComm implements Command {
+public class FaqComm implements Command{
 
     private final SendBotMessageService sendBotMessageService;
     UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
 
-    public final static String INFO_MESSAGE = "На этой странице вы можете узнать больше о нас. " +
-            "Выберите интересуюший вас пункт";
-    public final InlineKeyboardMarkup info = userInlineKeyboardSource.getInfo();
+    public final static String FAQ_MESSAGE = "Здесь будет много ответов на вопросы когда нибудь позже";
+    public final InlineKeyboardMarkup backToInfo = userInlineKeyboardSource.getBackToInfo();
 
-    public InfoComm(SendBotMessageService sendBotMessageService) {
+
+    public FaqComm(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
     }
 
     @Override
     public void execute(Update update) {
         String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
-        sendBotMessageService.sendMessage(chatId, INFO_MESSAGE, info);
+        sendBotMessageService.sendMessage(chatId, FAQ_MESSAGE, backToInfo);
     }
 }

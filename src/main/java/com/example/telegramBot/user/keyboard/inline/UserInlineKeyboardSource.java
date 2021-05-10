@@ -65,7 +65,7 @@ public class UserInlineKeyboardSource {
 
         InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("1.Начальная проверка уровня").setCallbackData("initial.level.check");
         InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("2.Запись на пробное занятие").setCallbackData("sign.up.for.trial.lesson");
-        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("3.Информация о курсе").setCallbackData("course.information");
+        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("3.Информация").setCallbackData("course.information");
         InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("4.Купить курс").setCallbackData("buy.course");
 
         List<InlineKeyboardButton> firstKeyboard = new ArrayList<>();
@@ -125,6 +125,49 @@ public class UserInlineKeyboardSource {
 
         return inlineKeyboardMarkup;
         //return new SendMessage().setChatId(chatId).setText("Пример").setReplyMarkup(inlineKeyboardMarkup);
+    }
+
+    public InlineKeyboardMarkup getInfo() {
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("О нас").setCallbackData("about.us");
+        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("FAQ").setCallbackData("faq");
+        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("Группы").setCallbackData("groups");
+        InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("Виды курсов и стоимость").setCallbackData("buy.course");
+
+        List<InlineKeyboardButton> firstButtonRow = new ArrayList<>();
+        firstButtonRow.add(firstButton);
+        List<InlineKeyboardButton> secondButtonRow = new ArrayList<>();
+        secondButtonRow.add(secondButton);
+        List<InlineKeyboardButton> thirdButtonRow = new ArrayList<>();
+        thirdButtonRow.add(thirdButton);
+        List<InlineKeyboardButton> fourthButtonRow = new ArrayList<>();
+        fourthButtonRow.add(fourthButton);
+
+        List<List<InlineKeyboardButton>> keyboardRow = new ArrayList<>();
+        keyboardRow.add(firstButtonRow);
+        keyboardRow.add(secondButtonRow);
+        keyboardRow.add(thirdButtonRow);
+        keyboardRow.add(fourthButtonRow);
+
+        inlineKeyboardMarkup.setKeyboard(keyboardRow);
+
+        return inlineKeyboardMarkup;
+    }
+
+    public InlineKeyboardMarkup getBackToInfo() {
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton button = new InlineKeyboardButton().setText("НАЗАД").setCallbackData("course.information");
+        List<InlineKeyboardButton> buttonRow = new ArrayList<>();
+        buttonRow.add(button);
+        List<List<InlineKeyboardButton>> keyboardRow = new ArrayList<>();
+        keyboardRow.add(buttonRow);
+        inlineKeyboardMarkup.setKeyboard(keyboardRow);
+
+        return inlineKeyboardMarkup;
     }
 }
 
