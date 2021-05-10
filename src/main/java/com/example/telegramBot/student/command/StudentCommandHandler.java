@@ -1,26 +1,26 @@
 package com.example.telegramBot.student.command;
 
 import com.example.telegramBot.service.SendBotMessageService;
-import com.example.telegramBot.student.command.commands.Command;
+
 import com.example.telegramBot.student.command.commands.UnknownComm;
+import com.example.telegramBot.user.command.commands.Command;
 import com.google.common.collect.ImmutableMap;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class StudentCommandHandler {
     private final ImmutableMap<String, Command> commandMap;
-    private final Command unknownComm;
+    private final UnknownComm unknownComm;
 
     public StudentCommandHandler(SendBotMessageService sendBotMessageService) {
-/*
         commandMap = ImmutableMap.<String, Command>builder()
-                .put(START.getCommandName(), new StartComm(sendBotMessageService))
+                /*.put(START.getCommandName(), new StartComm(sendBotMessageService))
                 .put(HELLO.getCommandName(), new HelloComm(sendBotMessageService))
                 .put(HELP.getCommandName(), new HelpComm(sendBotMessageService))
                 .put(SETTINGS.getCommandName(), new SettingsComm(sendBotMessageService))
                 .put(NO.getCommandName(), new NoComm(sendBotMessageService))
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
-                .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))
-                .build();*/
+                .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))*/
+                .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
     }
@@ -32,7 +32,7 @@ public class StudentCommandHandler {
             retrieveCommand(commandIdentifier).execute(update);
 
         } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
-            String commandIdentifier = ifTheTest(update.getCallbackQuery().getData().trim());
+            String commandIdentifier = update.getCallbackQuery().getData().trim();
             retrieveCommand(commandIdentifier).execute(update);
         }
     }
@@ -41,12 +41,7 @@ public class StudentCommandHandler {
         return commandMap.getOrDefault(commandIdentifier, unknownComm);
     }
 
-    public String ifTheTest(String str) {
-        if (str.startsWith("english")) {
-            str = "english";
-        }
-        return str;
-    }
+
 
 }
 
