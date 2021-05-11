@@ -26,7 +26,7 @@ public class HomeWorkComm implements Command {
         Integer message_id = update.getMessage().getMessageId();
         sendBotMessageService.deleteMessage(chatId, message_id);
 
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), HOME_WORK_MESSAGE, homeWork);
+        sendBotMessageService.sendMessage(update.getCallbackQuery().getMessage().getChatId().toString(), HOME_WORK_MESSAGE, homeWork);
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), returnToStudentMainMenu);
 
     }

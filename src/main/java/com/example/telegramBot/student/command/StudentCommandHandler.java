@@ -15,6 +15,13 @@ public class StudentCommandHandler {
     public StudentCommandHandler(SendBotMessageService sendBotMessageService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
+                /*.put(START.getCommandName(), new StartComm(sendBotMessageService))
+                .put(HELLO.getCommandName(), new HelloComm(sendBotMessageService))
+                .put(HELP.getCommandName(), new HelpComm(sendBotMessageService))
+                .put(SETTINGS.getCommandName(), new SettingsComm(sendBotMessageService))
+                .put(NO.getCommandName(), new NoComm(sendBotMessageService))
+                .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
+                .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))*/
                 .put(HOME_WORK. getCommandName(), new HomeWorkComm(sendBotMessageService))
                 .build();
 
