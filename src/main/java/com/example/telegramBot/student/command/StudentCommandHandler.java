@@ -27,7 +27,7 @@ public class StudentCommandHandler {
             retrieveCommand(commandIdentifier).execute(update);
 
         } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
-            String commandIdentifier = ifTheTest(update.getCallbackQuery().getData().trim());
+            String commandIdentifier = update.getCallbackQuery().getData().trim();
             retrieveCommand(commandIdentifier).execute(update);
         }
     }
@@ -35,13 +35,4 @@ public class StudentCommandHandler {
     public Command retrieveCommand(String commandIdentifier) {
         return commandMap.getOrDefault(commandIdentifier, unknownComm);
     }
-
-    public String ifTheTest(String str) {
-        if (str.startsWith("english")) {
-            str = "english";
-        }
-        return str;
-    }
-
-
 }

@@ -1,5 +1,6 @@
 package com.example.telegramBot.student.keyboard.reply;
 
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
@@ -13,7 +14,7 @@ public class StudentReplyKeyboardSource {
     public StudentReplyKeyboardSource() {
     }
 
-    public List<List<InlineKeyboardButton>> getReturnToMainMenu() {
+    public ReplyKeyboardMarkup getReturnToMainMenu() {
         final ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         replyKeyboardMarkup.setSelective(false);
         replyKeyboardMarkup.setResizeKeyboard(true);

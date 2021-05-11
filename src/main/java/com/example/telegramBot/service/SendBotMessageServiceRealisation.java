@@ -33,6 +33,20 @@ public class SendBotMessageServiceRealisation implements SendBotMessageService {
     }
 
     @Override
+    public void sendMessage(String chatId, ReplyKeyboard replayKeyboard) {
+        SendMessage sendMessage = new SendMessage();
+        sendMessage.setChatId(chatId);
+        sendMessage.enableHtml(true);
+        sendMessage.setReplyMarkup(replayKeyboard);
+
+        try {
+            telegramBot.execute(sendMessage);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void sendMessage(String chatId, String message, ReplyKeyboard replyMarkup) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);

@@ -1,6 +1,5 @@
 package com.example.telegramBot.student.keyboard.inline;
 
-import com.example.telegramBot.student.keyboard.reply.StudentReplyKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
@@ -13,8 +12,8 @@ public class StudentInlineKeyboardSource {
     }
 
     public InlineKeyboardMarkup getHomeWorkKeyboard() {
-        StudentReplyKeyboardSource studentReplyKeyboardSource = new StudentReplyKeyboardSource();
-        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        final InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
         InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Получить\n" +  "домашку").setCallbackData("homework.request");
         InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("Отправить\n" + "домашку").setCallbackData("homework.sent");
@@ -28,7 +27,7 @@ public class StudentInlineKeyboardSource {
         keyboardRows.add(firstKeyboard);
         keyboardRows.add(secondKeyboard);
 
-        inlineKeyboardMarkup.setKeyboard(keyboardRows).setKeyboard(studentReplyKeyboardSource.getReturnToMainMenu());
+        inlineKeyboardMarkup.setKeyboard(keyboardRows);
 
         return inlineKeyboardMarkup;
     }
