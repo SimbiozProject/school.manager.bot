@@ -3,6 +3,7 @@ package com.example.telegramBot.service;
 import com.example.telegramBot.TelegramBot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -33,14 +34,15 @@ public class SendBotMessageServiceRealisation implements SendBotMessageService {
     }
 
     @Override
-    public void sendMessage(String chatId, ReplyKeyboard replayKeyboard) {
+    public void sendMessage(String chatId, ReplyKeyboard replyMarkup) {
         SendMessage sendMessage = new SendMessage();
         sendMessage.setChatId(chatId);
         sendMessage.enableHtml(true);
-        sendMessage.setReplyMarkup(replayKeyboard);
+        sendMessage.setReplyMarkup(replyMarkup);
 
         try {
             telegramBot.execute(sendMessage);
+
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
@@ -74,6 +76,21 @@ public class SendBotMessageServiceRealisation implements SendBotMessageService {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void sendPhoto(String chatId, String url) {
+        SendPhoto sendPhoto = new SendPhoto();
+        sendPhoto.setChatId(chatId);
+        sendPhoto.setPhoto(url);
+        try {
+            telegramBot.execute(sendPhoto);
+
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 }

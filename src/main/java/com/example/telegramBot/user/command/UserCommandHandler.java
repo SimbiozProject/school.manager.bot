@@ -16,14 +16,24 @@ public class UserCommandHandler {
     public UserCommandHandler(SendBotMessageService sendBotMessageService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
-                .put(START.getCommandName(), new StartComm(sendBotMessageService))
+                //.put(START.getCommandName(), new StartComm(sendBotMessageService))
                 .put(HELLO.getCommandName(), new HelloComm(sendBotMessageService))
                 .put(HELP.getCommandName(), new HelpComm(sendBotMessageService))
                 .put(SETTINGS.getCommandName(), new SettingsComm(sendBotMessageService))
                 .put(NO.getCommandName(), new NoComm(sendBotMessageService))
+                .put(START_TEST.getCommandName(), new StartTestComm(sendBotMessageService))
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
-                .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))
-                .put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                //.put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(START.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(SELECTION_COURSE.getCommandName(), new SelectionCourseComm(sendBotMessageService))
+                .put(LEVEL_ZERO_MENU.getCommandName(), new LevelZeroComm(sendBotMessageService))
+                .put(LEVEL_ADVANCED_MENU.getCommandName(), new LevelAdvancedComm(sendBotMessageService))
+                .put(RETURN_TO_SELECTION_COURSE.getCommandName(), new SelectionCourseComm(sendBotMessageService))
+                .put(RETURN_TO_MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(INFO.getCommandName(), new InfoComm(sendBotMessageService))
+                .put(GROUPS.getCommandName(), new GroupsComm(sendBotMessageService))
+                .put(FAQ.getCommandName(), new FaqComm(sendBotMessageService))
+                .put(ABOUT_US.getCommandName(), new AboutUsComm(sendBotMessageService))
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
