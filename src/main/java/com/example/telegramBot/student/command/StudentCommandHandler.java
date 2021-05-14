@@ -2,11 +2,11 @@ package com.example.telegramBot.student.command;
 
 import com.example.telegramBot.service.SendBotMessageService;
 import com.example.telegramBot.student.command.commands.*;
-import com.example.telegramBot.user.command.commands.Command;
+import com.example.telegramBot.student.command.commands.Command;
 import com.google.common.collect.ImmutableMap;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import static com.example.telegramBot.student.command.StudentCommandName.*;
+import static com.example.telegramBot.student.command.CommandName.*;
 
 public class StudentCommandHandler {
     private final ImmutableMap<String, Command> commandMap;
@@ -16,11 +16,10 @@ public class StudentCommandHandler {
 
         commandMap = ImmutableMap.<String, Command>builder()
                 .put(SCHEDULE.getCommandName(), new ScheduleComm(sendBotMessageService))
-                .put(HOMEWORK.getCommandName(), new HomeworkComm(sendBotMessageService))
                 .put(COMMUNITY.getCommandName(), new CommunityComm(sendBotMessageService))
-                .put(PAY.getCommandName(), new PayComm(sendBotMessageService))
+                //.put(PAY.getCommandName(), new PayComm(sendBotMessageService))
                 .put(ZOOM.getCommandName(), new ZoomComm(sendBotMessageService))
-                .put(ALL_SCHEDULE.getCommandName(), new AllScheduleComm(sendBotMessageService))
+                //.put(ALL_SCHEDULE.getCommandName(), new AllScheduleComm(sendBotMessageService))
                 .put(STUDENT_MENU.getCommandName(), new StudentMenuComm(sendBotMessageService))
                 .build();
 

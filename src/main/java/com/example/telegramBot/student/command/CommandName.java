@@ -1,17 +1,14 @@
 package com.example.telegramBot.student.command;
 
-public enum StudentCommandName {
+public enum CommandName {
     SCHEDULE("schedule"),
-    HOMEWORK("homework"),
     COMMUNITY("community"),
-    PAY("pay"),
     ZOOM("zoom"),
-    ALL_SCHEDULE("all.schedule"),
-    STUDENT_MENU("menu");
+    STUDENT_MENU("/start");
 
     private final String commandName;
 
-    StudentCommandName(String commandName) {
+    CommandName(String commandName) {
         this.commandName = commandName;
     }
 

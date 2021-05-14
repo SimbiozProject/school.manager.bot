@@ -1,18 +1,17 @@
 package com.example.telegramBot.student.command.commands;
 
 import com.example.telegramBot.service.SendBotMessageService;
-import com.example.telegramBot.student.keyboards.StudentInlineKeyboardSource;
-import com.example.telegramBot.user.command.commands.Command;
+import com.example.telegramBot.student.keyboard.inline.StudentInlineKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 
 public class StudentMenuComm implements Command {
 
     private final SendBotMessageService sendBotMessageService;
     private final String MESSAGE = "Мой кабинет";
 
-    StudentInlineKeyboardSource studentInlineKeyboardSource = new StudentInlineKeyboardSource();
-    public final InlineKeyboardMarkup menu = studentInlineKeyboardSource.getStudentMenuKeyboard();
+    private final StudentInlineKeyboardSource studentInlineKeyboardSource = new StudentInlineKeyboardSource();
+    public final ReplyKeyboard menu = studentInlineKeyboardSource.getStudentMenuKeyboard();
 
     public StudentMenuComm(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
@@ -20,7 +19,6 @@ public class StudentMenuComm implements Command {
 
     @Override
     public void execute(Update update) {
-        String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
-        sendBotMessageService.sendMessage(chatId, MESSAGE, menu);
+        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), MESSAGE, menu);
     }
 }

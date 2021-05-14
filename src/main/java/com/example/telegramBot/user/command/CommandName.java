@@ -19,8 +19,7 @@ public enum CommandName {
     FAQ("faq"),
     ABOUT_US("about.us"),
     LEVEL_ZERO_MENU("level.zero"),
-    LEVEL_ADVANCED_MENU("level.advanced"),
-    STUDENT_MENU("student.menu");
+    LEVEL_ADVANCED_MENU("level.advanced");
 
     private final String commandName;
 

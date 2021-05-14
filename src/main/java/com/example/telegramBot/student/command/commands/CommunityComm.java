@@ -1,8 +1,7 @@
 package com.example.telegramBot.student.command.commands;
 
 import com.example.telegramBot.service.SendBotMessageService;
-import com.example.telegramBot.student.keyboards.StudentInlineKeyboardSource;
-import com.example.telegramBot.user.command.commands.Command;
+import com.example.telegramBot.student.keyboard.inline.StudentInlineKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 
