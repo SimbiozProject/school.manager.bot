@@ -62,7 +62,7 @@ public class TestComm implements Command {
             }
         }
         int result = count * 100 / TEST_QUESTIONS.size();
-        sendBotMessageService.sendMessage(chatId, String.format("Тест пройден. Ваш результат %d %%", result), returnToMainMenu);
+        sendBotMessageService.sendMessage(chatId, String.format("Тест пройден. Ваш результат %d %%", result), userInlineKeyboardSource.getFinishAndSend());
 
     }
 

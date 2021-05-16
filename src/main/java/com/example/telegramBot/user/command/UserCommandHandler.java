@@ -33,6 +33,7 @@ public class UserCommandHandler {
                 .put(GROUPS.getCommandName(), new GroupsComm(sendBotMessageService))
                 .put(FAQ.getCommandName(), new FaqComm(sendBotMessageService))
                 .put(ABOUT_US.getCommandName(), new AboutUsComm(sendBotMessageService))
+                .put(FINISH_AND_SEND.getCommandName(), new FinishSendComm(sendBotMessageService))
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
