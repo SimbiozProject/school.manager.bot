@@ -31,10 +31,10 @@ public class StudentInlineKeyboardSource {
         inlineKeyboardMarkup.setKeyboard(keyboardRows);
 
         return inlineKeyboardMarkup;
-      
+    }
     
           
-  public InlineKeyboardMarkup getStudentMenuKeyboard() {
+    public InlineKeyboardMarkup getStudentMenuKeyboard() {
 
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
@@ -125,5 +125,5 @@ public class StudentInlineKeyboardSource {
     }
 
 }
-}
+
 
