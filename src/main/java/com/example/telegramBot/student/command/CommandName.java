@@ -1,10 +1,13 @@
 package com.example.telegramBot.student.command;
 
 public enum CommandName {
+  
     SCHEDULE("schedule"),
     COMMUNITY("community"),
     ZOOM("zoom"),
-    STUDENT_MENU("/start");
+    STUDENT_MENU("/start"),
+    HOME_WORK("homework");
+
 
     private final String commandName;
 
@@ -15,4 +18,5 @@ public enum CommandName {
     public String getCommandName() {
         return commandName;
     }
+
 }

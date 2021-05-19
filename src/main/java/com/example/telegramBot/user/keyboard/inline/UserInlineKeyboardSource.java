@@ -1,6 +1,7 @@
 package com.example.telegramBot.user.keyboard.inline;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.ArrayList;
@@ -86,6 +87,26 @@ public class UserInlineKeyboardSource {
         keyboardRows.add(thirdKeyboard);
         keyboardRows.add(fourthKeyboard);
         keyboardRows.add(fifthKeyboard);
+
+        inlineKeyboardMarkup.setKeyboard(keyboardRows);
+
+        return inlineKeyboardMarkup;
+    }
+
+    public InlineKeyboardMarkup getHomeWorkKeyboard() {
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Получить\n" +  "домашку").setCallbackData("homework.request");
+        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("Отправить\n" + "домашку").setCallbackData("homework.sent");
+
+        List<InlineKeyboardButton> firstKeyboard = new ArrayList<>();
+        firstKeyboard.add(firstButton);
+        List<InlineKeyboardButton> secondKeyboard = new ArrayList<>();
+        secondKeyboard.add(secondButton);
+
+        List<List<InlineKeyboardButton>> keyboardRows = new ArrayList<>();
+        keyboardRows.add(firstKeyboard);
+        keyboardRows.add(secondKeyboard);
 
         inlineKeyboardMarkup.setKeyboard(keyboardRows);
 
