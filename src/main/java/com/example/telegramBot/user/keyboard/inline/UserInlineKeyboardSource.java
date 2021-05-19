@@ -7,7 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.telegramBot.user.repository.TestAnswerOptions.ANSWER_OPTIONS;
+import static com.example.telegramBot.user.repositiry.TestAnswerOptions.ANSWER_OPTIONS;
 
 
 public class UserInlineKeyboardSource {
