@@ -38,7 +38,7 @@ public class UserCommandHandler {
                 .put(GROUPS.getCommandName(), new GroupsComm(sendBotMessageService))
                 .put(FAQ.getCommandName(), new FaqComm(sendBotMessageService))
                 .put(ABOUT_US.getCommandName(), new AboutUsComm(sendBotMessageService))
-                .put(STUDENT_MENU.getCommandName(), new StudentMenuComm(sendBotMessageService)) //todo  удалить после рефакторинга
+                //.put(STUDENT_MENU.getCommandName(), new StudentMenuComm(sendBotMessageService)) //todo  удалить после рефакторинга
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
