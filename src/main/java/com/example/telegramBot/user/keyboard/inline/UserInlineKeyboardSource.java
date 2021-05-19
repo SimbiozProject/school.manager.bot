@@ -5,7 +5,6 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static com.example.telegramBot.user.repositiry.TestAnswerOptions.ANSWER_OPTIONS;
@@ -68,6 +67,8 @@ public class UserInlineKeyboardSource {
         InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("2.Запись на пробное занятие").setCallbackData("sign.up.for.trial.lesson");
         InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("3.Информация").setCallbackData("course.information");
         InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("4.Купить курс").setCallbackData("buy.course");
+        InlineKeyboardButton fifthButton = new InlineKeyboardButton().setText("5.Меню студента").setCallbackData("student.menu");
+
 
         List<InlineKeyboardButton> firstKeyboard = new ArrayList<>();
         firstKeyboard.add(firstButton);
@@ -77,12 +78,15 @@ public class UserInlineKeyboardSource {
         thirdKeyboard.add(thirdButton);
         List<InlineKeyboardButton> fourthKeyboard = new ArrayList<>();
         fourthKeyboard.add(fourthButton);
+        List<InlineKeyboardButton> fifthKeyboard = new ArrayList<>();
+        fourthKeyboard.add(fifthButton);
 
         List<List<InlineKeyboardButton>> keyboardRows = new ArrayList<>();
         keyboardRows.add(firstKeyboard);
         keyboardRows.add(secondKeyboard);
         keyboardRows.add(thirdKeyboard);
         keyboardRows.add(fourthKeyboard);
+        keyboardRows.add(fifthKeyboard);
 
         inlineKeyboardMarkup.setKeyboard(keyboardRows);
 
