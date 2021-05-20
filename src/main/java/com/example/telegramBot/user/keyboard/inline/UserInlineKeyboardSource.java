@@ -209,5 +209,22 @@ public class UserInlineKeyboardSource {
 
         return inlineKeyboardMarkup;
     }
+
+    public InlineKeyboardMarkup getFinishAndSend() {
+
+        InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
+
+        InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Завершить и отправить результат преподавателю").setCallbackData("finish.and.send");
+
+        List<InlineKeyboardButton> keyboardButtonsRow = new ArrayList<>();
+        keyboardButtonsRow.add(firstButton);
+
+        List<List<InlineKeyboardButton>> keyboardRow = new ArrayList<>();
+        keyboardRow.add(keyboardButtonsRow);
+
+        inlineKeyboardMarkup.setKeyboard(keyboardRow);
+
+        return inlineKeyboardMarkup;
+    }
 }
 
