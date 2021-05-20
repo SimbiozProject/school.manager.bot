@@ -8,8 +8,6 @@ import com.google.common.collect.ImmutableMap;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import static com.example.telegramBot.student.command.CommandName.*;
-import com.google.common.collect.ImmutableMap;
-import org.telegram.telegrambots.meta.api.objects.Update;
 
 import static com.example.telegramBot.student.command.CommandName.HOME_WORK;
 
@@ -18,7 +16,9 @@ public class StudentCommandHandler {
 
     private final ImmutableMap<String, Command> commandMap;
     private final Command unknownComm;
-
+    //SendBotMessageService sendBotMessageService;
+    //StudentMenuComm studentMenuComm = new StudentMenuComm(sendBotMessageService);
+    StudentMenuComm studentMenuComm;
     public StudentCommandHandler(SendBotMessageService sendBotMessageService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
@@ -38,6 +38,7 @@ public class StudentCommandHandler {
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
                 .put(TEST_ANSWER.getCommandName(), new TestComm(sendBotMessageService))*/
                 .put(HOME_WORK. getCommandName(), new HomeWorkComm(sendBotMessageService))
+                .put(RETURN_TO_STUDENT_MAIN_MENU.getCommandName(), new StudentMenuComm(sendBotMessageService))
                 .build();
 
         unknownComm = new UnknownComm(sendBotMessageService);
@@ -51,8 +52,9 @@ public class StudentCommandHandler {
         } else if (update.hasCallbackQuery() && update.getCallbackQuery().getMessage().hasText()) {
             String commandIdentifier = ifTheTest(update.getCallbackQuery().getData().trim());
             retrieveCommand(commandIdentifier).execute(update);
+            }
         }
-    }
+
 
     public Command retrieveCommand(String commandIdentifier) {
         return commandMap.getOrDefault(commandIdentifier, unknownComm);

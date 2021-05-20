@@ -70,19 +70,15 @@ public class StudentInlineKeyboardSource {
 
         InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Писоединитсья в Zoom").setCallbackData("zoom");
         InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("Посмотреть все расписание").setCallbackData("all.schedule");
-        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("Вернуться в главное меню").setCallbackData("/start");
 
         List<InlineKeyboardButton> firstButtonRow = new ArrayList<>();
         firstButtonRow.add(firstButton);
         List<InlineKeyboardButton> secondButtonRow = new ArrayList<>();
         secondButtonRow.add(secondButton);
-        List<InlineKeyboardButton> thirdButtonRow = new ArrayList<>();
-        thirdButtonRow.add(thirdButton);
 
         List<List<InlineKeyboardButton>> keyboardRow = new ArrayList<>();
         keyboardRow.add(firstButtonRow);
         keyboardRow.add(secondButtonRow);
-        keyboardRow.add(thirdButtonRow);
 
         inlineKeyboardMarkup.setKeyboard(keyboardRow);
 
@@ -95,17 +91,12 @@ public class StudentInlineKeyboardSource {
         InlineKeyboardButton firstButton = new InlineKeyboardButton()
                 .setText("Комьюнити")
                 .setUrl("https://t.me/Jis6");
-        InlineKeyboardButton secondButton = new InlineKeyboardButton()
-                .setText("Вернуться в главное меню").setCallbackData("/start");
 
         List<InlineKeyboardButton> firstButtonRow = new ArrayList<>();
         firstButtonRow.add(firstButton);
-        List<InlineKeyboardButton> secondButtonRow = new ArrayList<>();
-        firstButtonRow.add(secondButton);
 
         List<List<InlineKeyboardButton>> keyboardRow = new ArrayList<>();
         keyboardRow.add(firstButtonRow);
-        keyboardRow.add(secondButtonRow);
         inlineKeyboardMarkup.setKeyboard(keyboardRow);
         return inlineKeyboardMarkup;
     }

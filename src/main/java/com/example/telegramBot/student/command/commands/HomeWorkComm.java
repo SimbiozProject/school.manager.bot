@@ -10,7 +10,8 @@ public class HomeWorkComm implements Command {
 
     private final StudentReplyKeyboardSource studentReplyKeyboardSource = new StudentReplyKeyboardSource();
     private final StudentInlineKeyboardSource studentInlineKeyboardSource = new StudentInlineKeyboardSource();
-    private final static String HOME_WORK_MESSAGE = "Здусь ты можешь получить домашнее задание и отправить ее на проверку преподавателю";
+    private final static String HOME_WORK_MESSAGE = "Здесь ты можешь получить домашнее задание";
+    private final static String HOME_WORK_MESSAGE_CONTINUE = " и отправить его на проверку преподавателю.";
     private final ReplyKeyboard homeWork = studentInlineKeyboardSource.getHomeWorkKeyboard();
     private final ReplyKeyboard returnToStudentMainMenu = studentReplyKeyboardSource.getReturnToMainMenu();
     private final SendBotMessageService sendBotMessageService;
@@ -22,12 +23,12 @@ public class HomeWorkComm implements Command {
     @Override
     public void execute(Update update) {
 
-        String chatId = update.getMessage().getChatId().toString();
-        Integer message_id = update.getMessage().getMessageId();
+        String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
+        Integer message_id = update.getCallbackQuery().getMessage().getMessageId();
         sendBotMessageService.deleteMessage(chatId, message_id);
 
-        sendBotMessageService.sendMessage(update.getCallbackQuery().getMessage().getChatId().toString(), HOME_WORK_MESSAGE, homeWork);
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), returnToStudentMainMenu);
+        sendBotMessageService.sendMessage(chatId, HOME_WORK_MESSAGE, returnToStudentMainMenu);
+        sendBotMessageService.sendMessage(chatId, HOME_WORK_MESSAGE_CONTINUE, homeWork);
 
     }
 }

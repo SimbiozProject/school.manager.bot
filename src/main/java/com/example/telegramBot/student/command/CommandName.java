@@ -6,8 +6,8 @@ public enum CommandName {
     COMMUNITY("community"),
     ZOOM("zoom"),
     STUDENT_MENU("/start"),
-    HOME_WORK("homework");
-
+    HOME_WORK("homework"),
+    RETURN_TO_STUDENT_MAIN_MENU("Вернуться в главное меню");
 
     private final String commandName;
 

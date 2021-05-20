@@ -40,7 +40,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         //todo connect to database
 
         userCommandHandler.handle(update);
-        studentCommandHandler.handle(update);
+        //studentCommandHandler.handle(update);
     }
 
     private Long getUserId(Update update) {

@@ -24,9 +24,8 @@ public class LevelZeroComm implements Command {
     @Override
     public void execute(Update update) {
         String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
-        Integer message_id = update.getCallbackQuery().getMessage().getMessageId();
 
         sendBotMessageService.sendMessage(chatId, LEVEL_ZERO_INFORMATION, returnToSelectionCourse);
-        sendBotMessageService.deleteMessage(chatId, message_id);
+
     }
 }

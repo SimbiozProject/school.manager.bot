@@ -6,6 +6,10 @@ import com.example.telegramBot.user.keyboard.reply.UserReplyKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
 
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import static com.example.telegramBot.user.repositiry.TestAnswerOptions.answers;
 import static com.example.telegramBot.user.repositiry.TestAnswerOptions.numberOfQuestion;
 import static com.example.telegramBot.user.repositiry.TestCorrectAnswers.ANSWERS_ON_QUESTIONS;
@@ -26,6 +30,8 @@ public class TestComm implements Command {
         this.sendBotMessageService = sendBotMessageService;
     }
 
+    public static ArrayList<Instant> timeArrayListOfAnswers = new ArrayList<>();
+
     @Override
     public void execute(Update update) {
 
@@ -41,6 +47,17 @@ public class TestComm implements Command {
 
         if (numberOfQuestion < TEST_QUESTIONS.size()) {
             createAndSendNextQuestion(chatId);
+            Instant timeLastQuestion = Instant.now();
+            timeArrayListOfAnswers.add(timeLastQuestion);
+
+            long seconds = TimeUnit.MINUTES.toSeconds(20);
+            Instant twentyMinutesLater = TestComm.timeArrayListOfAnswers.get(0).plusSeconds(seconds);
+
+            if(timeLastQuestion.isAfter(twentyMinutesLater)) {
+                sendBotMessageService.sendMessage(chatId, "Time out");
+                return;
+            }
+
         } else {
             createAndSendResult(chatId);
         }

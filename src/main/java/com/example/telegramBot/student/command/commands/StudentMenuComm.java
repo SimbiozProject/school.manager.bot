@@ -19,6 +19,7 @@ public class StudentMenuComm implements Command {
 
     @Override
     public void execute(Update update) {
+
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), MESSAGE, menu);
     }
 }
