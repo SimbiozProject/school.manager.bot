@@ -5,13 +5,15 @@ import com.example.telegramBot.user.keyboard.inline.UserInlineKeyboardSource;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 
+import static com.example.telegramBot.user.Strings.FinalStringsFile.GROUPS_MESSAGE;
+
 public class GroupsComm implements Command{
 
     private final SendBotMessageService sendBotMessageService;
     UserInlineKeyboardSource userInlineKeyboardSource = new UserInlineKeyboardSource();
 
-    public final static String GROUPS_PHOTO_URL = "https://i.pinimg.com/originals/39/74/57/3974572f4d12c67cb4d54f424a63877a.jpg";
-    public final static String GROUPS_MESSAGE = "Немного о наших группах";
+    public final static String GROUPS_PHOTO_URL = "https://gomelenglishcourses.org/Kursy-English/kursy-anglijskogo-gomel-the-english-language-3.jpg";
+
     public final InlineKeyboardMarkup backToInfo = userInlineKeyboardSource.getBackToInfo();
 
 

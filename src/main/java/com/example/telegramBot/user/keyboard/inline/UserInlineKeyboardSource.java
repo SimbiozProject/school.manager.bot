@@ -96,7 +96,7 @@ public class UserInlineKeyboardSource {
     public InlineKeyboardMarkup getHomeWorkKeyboard() {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
-        InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Получить\n" +  "домашку").setCallbackData("homework.request");
+        InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Получить\n" + "домашку").setCallbackData("homework.request");
         InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("Отправить\n" + "домашку").setCallbackData("homework.sent");
 
         List<InlineKeyboardButton> firstKeyboard = new ArrayList<>();
@@ -152,7 +152,7 @@ public class UserInlineKeyboardSource {
         //return new SendMessage().setChatId(chatId).setText("Пример").setReplyMarkup(inlineKeyboardMarkup);
     }
 
-    public InlineKeyboardMarkup getBackInSelectionCourse(){
+    public InlineKeyboardMarkup getBackInSelectionCourse() {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
         InlineKeyboardButton inlineKeyboardButton1 = new InlineKeyboardButton();
         inlineKeyboardButton1.setText("Вернуться");
@@ -226,5 +226,6 @@ public class UserInlineKeyboardSource {
 
         return inlineKeyboardMarkup;
     }
+
 }
 
