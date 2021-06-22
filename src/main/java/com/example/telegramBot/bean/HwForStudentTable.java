@@ -21,7 +21,7 @@ public class HwForStudentTable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "group_number")
-    private GroupTable group;
+    private GroupTable groupHwForStudents;
 
     @Column(name = "lesson_number")
     private int lessonNumber;

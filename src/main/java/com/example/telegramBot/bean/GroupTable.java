@@ -13,23 +13,23 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
-@Table(name = "groups")
+@Table(name = "student_group")
 public class GroupTable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "group_id")
-    private Long groupId;
+    private Long idGroup;
 
     @Column(name = "group_number")
     private Long groupNumber;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="course_name")   // insertable=false, updatable=false)
-    private CourseTable course;
+    private CourseTable groupCourse;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "group")
-    private Set<TgUserTable> users;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupUser")
+    private Set<TgUserTable> tgUserSet;
 
-    @OneToMany(mappedBy = "group", fetch = FetchType.EAGER)
-    private Set<HwForStudentTable> forStudent;
+    @OneToMany(mappedBy = "groupHwForStudents", fetch = FetchType.EAGER)
+    private Set<HwForStudentTable> studentHw;
 }

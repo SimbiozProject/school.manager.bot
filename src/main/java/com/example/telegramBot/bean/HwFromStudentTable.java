@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
-@Table(name = "hw_from_students")
+@Table(name = "hwFrom_students")
 public class HwFromStudentTable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,6 +26,6 @@ public class HwFromStudentTable {
     @Column(name = "lesson_number")
     private int lessonNumber;
 
-    @Column(name = "hw_from_student")
+    @Column(name = "students_hw")
     private String hwFromStudent;
 }

@@ -26,10 +26,10 @@ public class CourseTable {
     private String courseName;
 
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "course")
-    private Set<TgUserTable> users;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseUser")
+    private Set<TgUserTable> userSet;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "course")
-    private Set<GroupTable> group;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "groupCourse")
+    private Set<GroupTable> groupSet;
 
 }

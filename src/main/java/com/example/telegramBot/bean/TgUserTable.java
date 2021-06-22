@@ -22,7 +22,7 @@ public class TgUserTable implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id-user")
+    @Column(name = "id_user")
     private Long id;
 
     @Column(name = "user_name", unique=true)
@@ -49,11 +49,11 @@ public class TgUserTable implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="course_name")     // insertable=false, updatable=false)
-    private CourseTable course;
+    private CourseTable courseUser;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="group_number") // insertable=false, updatable=false)
-    private GroupTable group;
+    private GroupTable groupUser;
 
     @Column(name = "block_user")
     private boolean blockUser;
@@ -63,5 +63,8 @@ public class TgUserTable implements Serializable {
 
     @OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName")
     private HwFromStudentTable fromStudent;
+
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "userName")
+    private UserAnswerTable usersAnswers;
 
 }
