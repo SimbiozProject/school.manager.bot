@@ -1,16 +1,14 @@
-package com.example.telegramBot.bean;
+package com.example.web.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.Set;
-import java.util.stream.Collectors;
+
 
 @Data
 @Builder

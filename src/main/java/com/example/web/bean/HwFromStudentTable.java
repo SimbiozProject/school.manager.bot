@@ -1,4 +1,4 @@
-package com.example.telegramBot.bean;
+package com.example.web.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Data
 @Builder
@@ -13,7 +14,7 @@ import javax.persistence.*;
 @Entity
 @NoArgsConstructor
 @Table(name = "hwFrom_students")
-public class HwFromStudentTable {
+public class HwFromStudentTable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "student_id")

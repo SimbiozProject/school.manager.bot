@@ -1,8 +1,9 @@
-package com.example.telegramBot.bean;
+package com.example.web.bean;
 
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Data
@@ -11,7 +12,7 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @Table(name = "question_answer")
-public class QuestionAnswerTable {
+public class QuestionAnswerTable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

@@ -1,6 +1,6 @@
-package com.example.telegramBot.repository;
+package com.example.web.repository;
 
-import com.example.telegramBot.bean.CrmUserTable;
+import com.example.web.bean.CrmUserTable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

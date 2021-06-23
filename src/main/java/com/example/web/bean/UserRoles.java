@@ -1,4 +1,4 @@
-package com.example.telegramBot.bean;
+package com.example.web.bean;
 
 import java.io.Serializable;
 
