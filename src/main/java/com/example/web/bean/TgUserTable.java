@@ -32,7 +32,7 @@ public class TgUserTable implements Serializable {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name="email", nullable = false)
+    @Column(name="email", nullable = false, unique = true)
     private String email;
 
     @Column(name = "active")
