@@ -69,8 +69,9 @@ public class StudentInlineKeyboardSource {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
         InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("Писоединитсья в Zoom").setCallbackData("zoom");
-        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("Посмотреть все расписание").setCallbackData("all.schedule");
-
+        InlineKeyboardButton secondButton = new InlineKeyboardButton()
+                .setText("Посмотреть все расписание")
+                .setUrl("https://calendar.google.com/calendar/u/0?cid=dHJpYWwuZW5nbGlzaC5zY2hvb2xAZ21haWwuY29t");
         List<InlineKeyboardButton> firstButtonRow = new ArrayList<>();
         firstButtonRow.add(firstButton);
         List<InlineKeyboardButton> secondButtonRow = new ArrayList<>();
