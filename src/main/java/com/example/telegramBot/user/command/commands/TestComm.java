@@ -86,6 +86,7 @@ public class TestComm implements Command {
     private void addTheAnswerIntoList(Update update) {
         if (!update.getCallbackQuery().getData().equals("english")) {
             answers.add(update.getCallbackQuery().getData().replace("english", ""));
+
         }
     }
 

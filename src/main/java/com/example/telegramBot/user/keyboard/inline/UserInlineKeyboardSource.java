@@ -64,29 +64,25 @@ public class UserInlineKeyboardSource {
         InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
 
         InlineKeyboardButton firstButton = new InlineKeyboardButton().setText("1.Начальная проверка уровня").setCallbackData("initial.level.check");
-        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("2.Запись на пробное занятие").setCallbackData("sign.up.for.trial.lesson");
-        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("3.Информация").setCallbackData("course.information");
-        InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("4.Купить курс").setCallbackData("buy.course");
-        InlineKeyboardButton fifthButton = new InlineKeyboardButton().setText("5.Меню студента").setCallbackData("student.menu");
+        InlineKeyboardButton secondButton = new InlineKeyboardButton().setText("2.Информация").setCallbackData("course.information");
+        InlineKeyboardButton thirdButton = new InlineKeyboardButton().setText("3.Купить курс").setCallbackData("buy.course");
+        InlineKeyboardButton fourthButton = new InlineKeyboardButton().setText("4.Меню студента").setCallbackData("student.menu");
 
 
         List<InlineKeyboardButton> firstKeyboard = new ArrayList<>();
         firstKeyboard.add(firstButton);
-        List<InlineKeyboardButton> secondKeyboard = new ArrayList<>();
+        List<InlineKeyboardButton>secondKeyboard = new ArrayList<>();
         secondKeyboard.add(secondButton);
         List<InlineKeyboardButton> thirdKeyboard = new ArrayList<>();
         thirdKeyboard.add(thirdButton);
         List<InlineKeyboardButton> fourthKeyboard = new ArrayList<>();
         fourthKeyboard.add(fourthButton);
-        List<InlineKeyboardButton> fifthKeyboard = new ArrayList<>();
-        fourthKeyboard.add(fifthButton);
 
         List<List<InlineKeyboardButton>> keyboardRows = new ArrayList<>();
         keyboardRows.add(firstKeyboard);
         keyboardRows.add(secondKeyboard);
         keyboardRows.add(thirdKeyboard);
         keyboardRows.add(fourthKeyboard);
-        keyboardRows.add(fifthKeyboard);
 
         inlineKeyboardMarkup.setKeyboard(keyboardRows);
 
