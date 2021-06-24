@@ -27,16 +27,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="question_answer : ${testList}">
-            <td th:text="${question_answer.getId()">#</td>
-            <td th:text="${question_answer.getQuestion()}">Question</td>
-            <td th:text="${question_answer.getFirstAnswer()}">FirstAnswer</td>
-            <td th:text="${question_answer.getSecondAnswer()}">SecondAnswer</td>
-            <td th:text="${question_answer.getThirdAnswer()}">ThirdAnswer</td>
-            <td th:text="${question_answer.getFourthAnswer()}">FourthAnswer</td>
-            <td th:text="${question_answer.getRightAnswer()}">RightAnswer</td>
-            <td><a th:object="${city}" th:href="@{'/delete/' + ${city.getNameRu()}}">Удалить</a></td>
-            <td><a th:object="${city}" th:href="@{'/update/' + ${city.getNameRu()}}">Изменить</a></td>
+        <tr th:each="question: ${testList}">
+            <td th:text="${question.getId()}">#</td>
+            <td th:text="${question.getQuestion()}">Question</td>
+            <td th:text="${question.getFirstAnswer()}">FirstAnswer</td>
+            <td th:text="${question.getSecondAnswer()}">SecondAnswer</td>
+            <td th:text="${question.getThirdAnswer()}">ThirdAnswer</td>
+            <td th:text="${question.getFourthAnswer()}">FourthAnswer</td>
+            <td th:text="${question.getRightAnswer()}">RightAnswer</td>
+            <td><a th:object="${question}" th:href="@{'/delete/' + ${question.getId()}}">Удалить</a></td>
+            <td><a th:object="${question}" th:href="@{'/update/' + ${question.getId()}}">Изменить</a></td>
         </tr>
     </table>
     <br>
@@ -44,6 +44,6 @@
 <br>
 
 <br>
-<a href="/addCity">Add question</a>
+<a href="/addTest">Add question</a>
 </body>
 </html>

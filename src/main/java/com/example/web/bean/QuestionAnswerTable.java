@@ -41,4 +41,12 @@ public class QuestionAnswerTable implements Serializable {
     @EqualsAndHashCode.Exclude
     private Set<UserAnswerTable> answerFromUser;
 
+    public QuestionAnswerTable(String question, String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer, String rightAnswer) {
+        this.question = question;
+        this.firstAnswer = firstAnswer;
+        this.secondAnswer = secondAnswer;
+        this.thirdAnswer = thirdAnswer;
+        this.fourthAnswer = fourthAnswer;
+        this.rightAnswer = rightAnswer;
+    }
 }

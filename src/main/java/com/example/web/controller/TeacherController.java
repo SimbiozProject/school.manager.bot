@@ -7,15 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller(value = "/")
 public class TeacherController {
 
-
-
-
     @GetMapping(value = "teacher")
     public ModelAndView teacherPage(){
         ModelAndView modelAndView = new ModelAndView("/teacher");
         return modelAndView;
     }
-
-
-
 }
