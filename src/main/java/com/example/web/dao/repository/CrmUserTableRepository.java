@@ -1,4 +1,4 @@
-package com.example.web.repository;
+package com.example.web.dao.repository;
 
 import com.example.web.bean.CrmUserTable;
 import org.springframework.data.jpa.repository.JpaRepository;
