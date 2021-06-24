@@ -25,29 +25,38 @@ public class TgUserTableService {
     }
 
     @Transactional
-    public Optional<TgUserTable> findByUserName(String userName) {
-        return tgUserTableRepository.findByUserName(userName); // не знаю почему ругается на Optional.ofNullable????
-    }
-
-//    @Transactional
-//    public Optional<TgUserTable> findByFirstName(String firstName) {
-//        return tgUserTableRepository.findByFirstName(firstName); // не знаю почему ругается на Optional.ofNullable????
-//    }
-//
-//    @Transactional
-//    public Optional<TgUserTable> findByLastName(String lastName) {
-//        return tgUserTableRepository.findByLastName(lastName); // не знаю почему ругается на Optional.ofNullable????
-//    }
-
-    @Transactional
-    public Optional<TgUserTable> findByEmail(String email) {
-        return tgUserTableRepository.findByEmail(email); // не знаю почему ругается на Optional.ofNullable????
+    public TgUserTable findByUserName(String userName) {
+        return tgUserTableRepository.findByUserName(userName);
     }
 
     @Transactional
-    public void deleteByUserName(String userName) {
-        tgUserTableRepository.deleteByUserName(userName);
+    public Optional<TgUserTable> findByFirstName(String firstName) {
+        return tgUserTableRepository.findByFirstName(firstName); // не знаю почему ругается на Optional.ofNullable????
     }
 
+    @Transactional
+    public Optional<TgUserTable> findByLastName(String lastName) {
+        return tgUserTableRepository.findByLastName(lastName); // не знаю почему ругается на Optional.ofNullable????
+    }
+
+    @Transactional
+    public TgUserTable findByEmail(String email) {
+        return tgUserTableRepository.findByEmail(email);
+    }
+
+    @Transactional
+    public void deleteById(Long id) {
+        tgUserTableRepository.deleteById(id);
+    }
+
+    @Transactional
+    public void deleteAll() {
+        tgUserTableRepository.deleteAll();
+    }
+
+    @Transactional
+    public Long countAll() {
+        return tgUserTableRepository.count();
+    }
 
 }

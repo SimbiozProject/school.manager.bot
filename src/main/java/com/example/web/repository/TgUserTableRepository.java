@@ -10,14 +10,14 @@ import java.util.Optional;
 @Repository
 public interface TgUserTableRepository extends JpaRepository<TgUserTable, Long> {
 
-    Optional<TgUserTable> findByUserName(String userName);
+    TgUserTable findByUserName(String userName);
 
-//    Optional<TgUserTable> findByFirstName(String userName);
-//
-//    Optional<TgUserTable> findByLastName(String userName);
+    Optional<TgUserTable> findByFirstName(String userName);
 
-    Optional<TgUserTable> findByEmail(String email);
+    Optional<TgUserTable> findByLastName(String userName);
 
-    void deleteByUserName(String userName);
+    TgUserTable findByEmail(String email);
+
+
 
 }
