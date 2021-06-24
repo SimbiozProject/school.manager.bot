@@ -1,4 +1,4 @@
-package com.example.web.repository;
+package com.example.web.dao.repository;
 
 
 import com.example.web.bean.TgUserTable;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface TgUserTableRepository extends JpaRepository<TgUserTable, Long> {
+public interface TgUserTableDaoWebRepository extends JpaRepository<TgUserTable, Long> {
 
     TgUserTable findByUserName(String userName);
 
