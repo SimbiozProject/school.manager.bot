@@ -6,44 +6,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Test</title>
+    <style>
+        .layer1 {
+            margin-top: 3%; /* Отступ сверху */
+            margin-left: 3%; /* Отступ слева */
+            margin-right: 3%; /* Отступ справа */
+        }
+    </style>
 </head>
 <body>
-
-<br>
-<form method="get">
-    <p><h4> English Test</h4></p>
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-
-            <th>#</th>
-            <th>Question</th>
-            <th>First_answer</th>
-            <th>Second_answer</th>
-            <th>Third_answer</th>
-            <th>Fourth_answer</th>
-            <th>Right_answer</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="question: ${testList}">
-            <td th:text="${question.getId()}">#</td>
-            <td th:text="${question.getQuestion()}">Question</td>
-            <td th:text="${question.getFirstAnswer()}">FirstAnswer</td>
-            <td th:text="${question.getSecondAnswer()}">SecondAnswer</td>
-            <td th:text="${question.getThirdAnswer()}">ThirdAnswer</td>
-            <td th:text="${question.getFourthAnswer()}">FourthAnswer</td>
-            <td th:text="${question.getRightAnswer()}">RightAnswer</td>
-            <td><a th:object="${question}" th:href="@{'/delete/' + ${question.getId()}}">Удалить</a></td>
-            <td><a th:object="${question}" th:href="@{'/update/' + ${question.getId()}}">Изменить</a></td>
-        </tr>
-    </table>
+<div class="layer1">
     <br>
-</form>
-<br>
+    <form method="get">
+        <p><h4> English Test</h4></p>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
 
-<br>
-<a href="/addTest">Add question</a>
+                <th>#</th>
+                <th>Question</th>
+                <th>First_answer</th>
+                <th>Second_answer</th>
+                <th>Third_answer</th>
+                <th>Fourth_answer</th>
+                <th>Right_answer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="question: ${testList}">
+                <td th:text="${question.getId()}">#</td>
+                <td th:text="${question.getQuestion()}">Question</td>
+                <td th:text="${question.getFirstAnswer()}">FirstAnswer</td>
+                <td th:text="${question.getSecondAnswer()}">SecondAnswer</td>
+                <td th:text="${question.getThirdAnswer()}">ThirdAnswer</td>
+                <td th:text="${question.getFourthAnswer()}">FourthAnswer</td>
+                <td th:text="${question.getRightAnswer()}">RightAnswer</td>
+                <td><a th:object="${question}" th:href="@{'/delete/' + ${question.getId()}}">Удалить</a></td>
+                <td><a th:object="${question}" th:href="@{'/update/' + ${question.getId()}}">Изменить</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+    </form>
+    <br>
+
+    <br>
+    <a href="/addTest">Add question</a>
+    <br>
+    <a href="/teacher">Back to Main Menu</a>
+</div>
 </body>
 </html>
