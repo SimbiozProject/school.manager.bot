@@ -98,14 +98,20 @@
         </repository>
     </distributionManagement>
 
-    <!--<build>
+    <build>
         <plugins>
-            <plugin>
+                <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-resources-plugin</artifactId>
+    <version>3.1.0</version>
+                  </plugin> 
+
+          <!--  <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.2.0</version>
-            </plugin>
+            </plugin>-->
             
         </plugins>
-    </build>-->
+    </build>
 
 </project>
