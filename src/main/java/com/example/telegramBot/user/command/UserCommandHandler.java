@@ -7,6 +7,7 @@ import com.example.telegramBot.student.command.commands.ScheduleComm;
 import com.example.telegramBot.student.command.commands.HomeWorkComm;
 
 import com.example.telegramBot.user.command.commands.*;
+import com.example.web.dao.service.StatisticUserService;
 import com.google.common.collect.ImmutableMap;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
@@ -17,7 +18,7 @@ public class UserCommandHandler {
     private final ImmutableMap<String, Command> commandMap;
     private final Command unknownComm;
 
-    public UserCommandHandler(SendBotMessageService sendBotMessageService) {
+    public UserCommandHandler(SendBotMessageService sendBotMessageService, StatisticUserService statisticUserService) {
 
         commandMap = ImmutableMap.<String, Command>builder()
                 //.put(START.getCommandName(), new StartComm(sendBotMessageService))
@@ -28,18 +29,20 @@ public class UserCommandHandler {
                 .put(START_TEST.getCommandName(), new StartTestComm(sendBotMessageService))
                 .put(TEST.getCommandName(), new TestComm(sendBotMessageService))
                 //.put(MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
-                .put(START.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(START.getCommandName(), new MainMenuComm(sendBotMessageService, statisticUserService))
                 .put(SELECTION_COURSE.getCommandName(), new SelectionCourseComm(sendBotMessageService))
                 .put(LEVEL_ZERO_MENU.getCommandName(), new LevelZeroComm(sendBotMessageService))
                 .put(LEVEL_ADVANCED_MENU.getCommandName(), new LevelAdvancedComm(sendBotMessageService))
                 .put(RETURN_TO_SELECTION_COURSE.getCommandName(), new SelectionCourseComm(sendBotMessageService))
-                .put(RETURN_TO_MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService))
+                .put(RETURN_TO_MAIN_MENU.getCommandName(), new MainMenuComm(sendBotMessageService, statisticUserService))
                 .put(INFO.getCommandName(), new InfoComm(sendBotMessageService))
                 .put(GROUPS.getCommandName(), new GroupsComm(sendBotMessageService))
                 .put(FAQ.getCommandName(), new FaqComm(sendBotMessageService))
                 .put(ABOUT_US.getCommandName(), new AboutUsComm(sendBotMessageService))
 
                 .put(FINISH_AND_SEND.getCommandName(), new FinishSendComm(sendBotMessageService))
+                .put(STOP.getCommandName(), new StopComm(sendBotMessageService, statisticUserService))
+                .put(STATISTIC.getCommandName(), new StatisticComm(sendBotMessageService, statisticUserService))
 
                 //.put(STUDENT_MENU.getCommandName(), new StudentMenuComm(sendBotMessageService)) //todo  удалить после рефакторинга
 

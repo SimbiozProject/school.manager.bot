@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>deleteTest</title>
+    <style>
+        .layer1 {
+            margin-top: 3%; /* Отступ сверху */
+            margin-left: 3%; /* Отступ слева */
+            margin-right: 5%; /* Отступ справа */
+        }
+    </style>
+</head>
+<body>
+<div class="layer1">
+    <br>
+    <form method="post">
+        <p><h4>Are you sure you want to delete the question? </h4></p>
+        <table class="table table-success table-striped">
+
+            <th>Question</th>
+            <th>First_answer</th>
+            <th>Second_answer</th>
+            <th>Third_answer</th>
+            <th>Fourth_answer</th>
+            <th>Right_answer</th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+                <td th:text="${test.getQuestion()}">Question</td>
+                <td th:text="${test.getFirstAnswer()}">FirstAnswer</td>
+                <td th:text="${test.getSecondAnswer()}">SecondAnswer</td>
+                <td th:text="${test.getThirdAnswer()}">ThirdAnswer</td>
+                <td th:text="${test.getFourthAnswer()}">FourthAnswer</td>
+                <td th:text="${test.getRightAnswer()}">RightAnswer</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <button status="submit" class="btn btn-primary">Delete</button>
+        <br>
+        <br>
+
+    </form>
+    <br>
+
+
+    <a href="/test">Back to English Test</a>
+    <br><br>
+</div>
+</body>
+</html>
