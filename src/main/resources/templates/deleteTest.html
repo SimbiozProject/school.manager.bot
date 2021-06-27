@@ -8,9 +8,9 @@
     <title>deleteTest</title>
     <style>
         .layer1 {
-            margin-top: 5%; /* Отступ сверху */
-            margin-left: 10%; /* Отступ слева */
-            margin-right: 10%; /* Отступ справа */
+            margin-top: 3%; /* Отступ сверху */
+            margin-left: 3%; /* Отступ слева */
+            margin-right: 5%; /* Отступ справа */
         }
     </style>
 </head>
@@ -19,8 +19,8 @@
     <br>
     <form method="post">
         <p><h4>Are you sure you want to delete the question? </h4></p>
-        <table class="table table-bordered">
-            <th>#</th>
+        <table class="table table-success table-striped">
+
             <th>Question</th>
             <th>First_answer</th>
             <th>Second_answer</th>
@@ -32,7 +32,7 @@
             </thead>
             <tbody>
 
-                <td th:text="${test.getId()}">#</td>
+
                 <td th:text="${test.getQuestion()}">Question</td>
                 <td th:text="${test.getFirstAnswer()}">FirstAnswer</td>
                 <td th:text="${test.getSecondAnswer()}">SecondAnswer</td>
