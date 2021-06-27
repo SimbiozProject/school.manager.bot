@@ -20,7 +20,9 @@ public enum CommandName {
     ABOUT_US("about.us"),
     LEVEL_ZERO_MENU("level.zero"),
     LEVEL_ADVANCED_MENU("level.advanced"),
-    FINISH_AND_SEND("finish.and.send");
+    FINISH_AND_SEND("finish.and.send"),
+    STOP("/stop"),
+    STATISTIC("statistic");
 
     private final String commandName;
 
