@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 
 @Data
@@ -47,22 +47,22 @@ public class TgUserTable implements Serializable {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="course_name")     // insertable=false, updatable=false)
-    private CourseTable courseUser;
+    private  CourseTable courseUser;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="group_number") // insertable=false, updatable=false)
     private GroupTable groupUser;
 
     @Column(name = "block_user")
-    private boolean blockUser;
+    private Boolean blockUser;
 
     @Column(name = "payment")
-    private boolean payment;
+    private Boolean payment;
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.REMOVE)
     private HwFromStudentTable fromStudent;
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "userName")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.REMOVE)
     private UserAnswerTable usersAnswers;
 
 }

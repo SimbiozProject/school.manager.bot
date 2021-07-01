@@ -21,7 +21,7 @@ public class UserAnswerTable  implements Serializable {
     @Column(name = "user_id")
     private Long id;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "user_name")
     private TgUserTable userName;
 
