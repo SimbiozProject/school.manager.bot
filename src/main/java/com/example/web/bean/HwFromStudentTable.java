@@ -20,7 +20,7 @@ public class HwFromStudentTable implements Serializable {
     @Column(name = "student_id")
     private int studentId;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "student_name")
     private TgUserTable studentName;
 
