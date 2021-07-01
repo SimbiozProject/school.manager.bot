@@ -166,33 +166,4 @@ public class AdminController {
         return modelAndView;
     }
 
-    /*
-@GetMapping(value = "addTest")
-    public ModelAndView addTestPage() {
-        ModelAndView modelAndView = new ModelAndView("/addTest");
-        return modelAndView;
-    }
-
-    @PostMapping(value = "addTest")
-    public ModelAndView addTest(@RequestParam(value = "question") String question,
-                                @RequestParam(value = "firstAnswer") String firstAnswer,
-                                @RequestParam(value = "secondAnswer") String secondAnswer,
-                                @RequestParam(value = "thirdAnswer") String thirdAnswer,
-                                @RequestParam(value = "fourthAnswer") String fourthAnswer,
-                                @RequestParam(value = "rightAnswer") String rightAnswer) {
-        ModelAndView modelAndView = new ModelAndView("/addTest");
-        QuestionAnswerTable newQuestion = QuestionAnswerTable.builder()
-                .question(question)
-                .firstAnswer(firstAnswer)
-                .secondAnswer(secondAnswer)
-                .thirdAnswer(thirdAnswer)
-                .fourthAnswer(fourthAnswer)
-                .rightAnswer(rightAnswer)
-                .build();
-        questionAnswerTableDaoWebService.addToDb(newQuestion);
-        modelAndView.setViewName("redirect:/test");
-        return modelAndView;
-
-    }
-     */
 }
