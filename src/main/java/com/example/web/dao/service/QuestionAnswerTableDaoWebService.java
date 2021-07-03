@@ -5,7 +5,6 @@ import com.example.web.dao.repository.QuestionAnswerTableRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 
@@ -13,7 +12,7 @@ import java.util.List;
 public class QuestionAnswerTableDaoWebService {
 
     @Autowired
-    QuestionAnswerTableRepository questionAnswerTableRepository;
+    private QuestionAnswerTableRepository questionAnswerTableRepository;
 
     public List<QuestionAnswerTable> findAll() {
         return questionAnswerTableRepository.findAll();

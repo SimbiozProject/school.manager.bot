@@ -21,7 +21,7 @@ public class TgUserTableDaoWebService {
 
     @Transactional
     public Optional<TgUserTable> findById(Long id) {
-        return tgUserTableDaoWebRepository.findById(id); // не знаю почему ругается на Optional.ofNullable????
+        return tgUserTableDaoWebRepository.findById(id);
     }
 
     @Transactional
@@ -31,12 +31,12 @@ public class TgUserTableDaoWebService {
 
     @Transactional
     public Optional<TgUserTable> findByFirstName(String firstName) {
-        return tgUserTableDaoWebRepository.findByFirstName(firstName); // не знаю почему ругается на Optional.ofNullable????
+        return tgUserTableDaoWebRepository.findByFirstName(firstName);
     }
 
     @Transactional
     public Optional<TgUserTable> findByLastName(String lastName) {
-        return tgUserTableDaoWebRepository.findByLastName(lastName); // не знаю почему ругается на Optional.ofNullable????
+        return tgUserTableDaoWebRepository.findByLastName(lastName);
     }
 
     @Transactional
