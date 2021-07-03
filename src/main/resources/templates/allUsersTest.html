@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>allUserTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <form style="margin-top: 20px" th:action="@{searchUserName}" method="get">
+            <input type="text" name="userName" placeholder="userName"/>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" type="submit">Найти по userName</button>
+        </form>
+        <form style="margin:  20px" th:action="@{searchId}" method="get">
+            <input type="text" name="id" placeholder="#"/>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" type="submit">Найти по #</button>
+        </form>
+    </div>
+</div>
+<br>
+<form method="get">
+    <table class="table table-success table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">UserName</th>
+            <th scope="col">ButtonMovingUserById</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="userAnswerTable : ${listUserAnswerTable}">
+            <td th:text="${userAnswerTable.getId()}">#</td>
+            <td th:text="${userAnswerTable.getUserName()}">UserName</td>
+            <td>
+                <a href="@{'/userTest/' + ${userAnswerTable.getId()}}">Moving to user's page</a>
+                ButtonMovingUserById
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+</form>
+</body>
+</html>
