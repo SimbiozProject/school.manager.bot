@@ -13,14 +13,14 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
-@Table(name = "hwFrom_students")
+@Table(name = "hw_from_students")
 public class HwFromStudentTable implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "student_id")
     private int studentId;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "student_name")
     private TgUserTable studentName;
 
