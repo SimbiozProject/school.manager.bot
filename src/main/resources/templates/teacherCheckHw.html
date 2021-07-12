@@ -16,7 +16,7 @@
         }
     </style>
     <style>
-        .container-fluid{
+        .container-fluid {
             margin-top: 3%; /* Отступ сверху */
             margin-left: 3%; /* Отступ слева */
             margin-right: 3%; /* Отступ справа */
@@ -27,17 +27,17 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <form style="margin-top: 20px"  th:action="@{searchFirstname}" method="get">
-            <input type="text" name="firstname"  placeholder="Name"/>&nbsp;&nbsp;&nbsp;
-            <button  class="btn btn-success"  type="submit">Find by name</button>
+        <form style="margin-top: 20px" th:action="@{searchFirstname}" method="get">
+            <input type="text" name="firstname" placeholder="Name"/>&nbsp;&nbsp;&nbsp;
+            <button class="btn btn-success" type="submit">Find by name</button>
         </form>
         <form style="margin:  20px" th:action="@{searchLastname}" method="get">
             <input type="text" name="lastname" placeholder="Surname"/>&nbsp;&nbsp;&nbsp;
-            <button type="submit"  class="btn btn-success">Find by surname</button>
+            <button type="submit" class="btn btn-success">Find by surname</button>
         </form>
         <form style="margin:  20px" th:action="@{searchLesson}" method="get">
             <input type="text" name="lesson" placeholder="Lesson"/>&nbsp;&nbsp;&nbsp;
-            <button type="submit"  class="btn btn-success">Find by lesson</button>
+            <button type="submit" class="btn btn-success">Find by lesson</button>
         </form>
 
     </div>
@@ -64,7 +64,7 @@
                 <td th:text="${hw.getStudentName().getFirstName()}">Firstname</td>
                 <td th:text="${hw.getStudentName().getLastName()}">Lastname</td>
                 <td th:text="${hw.getLessonNumber()}">Lesson</td>
-                <td> <a th:href="${hw.getHwFromStudent()}">Student answer</a></td>
+                <td><a th:href="${hw.getHwFromStudent()}">Student answer</a></td>
                 <td><a th:object="${hw}" th:href="@{'/deleteHwFromStudent/' + ${hw.getStudentId()}}">Delete</a></td>
 
             </tr>

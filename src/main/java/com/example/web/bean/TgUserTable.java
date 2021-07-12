@@ -14,7 +14,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(name = "tg_user")
-@ToString(exclude = "fromStudent")
+@ToString(exclude = {"fromStudent", "usersAnswers"})
 public class TgUserTable implements Serializable {
 
     @Id
@@ -61,6 +61,6 @@ public class TgUserTable implements Serializable {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "studentName", cascade = CascadeType.ALL)
     private Set<HwFromStudentTable> fromStudent;
 
-    //@OneToOne(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.REMOVE)
-    //private UserAnswerTable usersAnswers;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.ALL)
+    private Set<UserAnswerTable> usersAnswers;
 }

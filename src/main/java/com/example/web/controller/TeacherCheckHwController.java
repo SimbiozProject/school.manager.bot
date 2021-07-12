@@ -38,14 +38,14 @@ public class TeacherCheckHwController {
     }
 
     @GetMapping(value = "searchFirstname")
-    public ModelAndView searchFirstname(@ModelAttribute(name = "firstname") String name){
+    public ModelAndView searchFirstname(@ModelAttribute(name = "firstname") String name) {
         ModelAndView modelAndView = new ModelAndView("/teacherCheckHw");
         modelAndView.addObject("hwFromStudentList", hwFromStudentService.findByFirstName(name));
         return modelAndView;
     }
 
     @GetMapping(value = "searchLastname")
-    public ModelAndView searchLastName(@ModelAttribute(name = "lastname") String name){
+    public ModelAndView searchLastName(@ModelAttribute(name = "lastname") String name) {
         ModelAndView modelAndView = new ModelAndView("/teacherCheckHw");
         modelAndView.addObject("hwFromStudentList", hwFromStudentService.findByLastName(name));
         return modelAndView;
@@ -53,7 +53,7 @@ public class TeacherCheckHwController {
 
 
     @GetMapping(value = "searchLesson")
-    public ModelAndView searchLesson(@ModelAttribute(name = "lesson") Integer lesson){
+    public ModelAndView searchLesson(@ModelAttribute(name = "lesson") Integer lesson) {
         ModelAndView modelAndView = new ModelAndView("/teacherCheckHw");
         modelAndView.addObject("hwFromStudentList", hwFromStudentService.findByLesson(lesson));
         return modelAndView;

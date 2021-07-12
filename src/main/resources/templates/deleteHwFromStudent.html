@@ -32,11 +32,11 @@
             </thead>
 
             <tbody>
-                <td></td>
-                <td th:text="${hw.getStudentName().getFirstName()}">Firstname</td>
-                <td th:text="${hw.getStudentName().getLastName()}">Lastname</td>
-                <td th:text="${hw.getLessonNumber()}">Lesson</td>
-                <td> <a th:href="${hw.getHwFromStudent()}">Student answer</a></td>
+            <td></td>
+            <td th:text="${hw.getStudentName().getFirstName()}">Firstname</td>
+            <td th:text="${hw.getStudentName().getLastName()}">Lastname</td>
+            <td th:text="${hw.getLessonNumber()}">Lesson</td>
+            <td><a th:href="${hw.getHwFromStudent()}">Student answer</a></td>
             </tbody>
         </table>
         <br>
