@@ -15,8 +15,33 @@
             margin-right: 3%; /* Отступ справа */
         }
     </style>
+    <style>
+        .container-fluid{
+            margin-top: 3%; /* Отступ сверху */
+            margin-left: 3%; /* Отступ слева */
+            margin-right: 3%; /* Отступ справа */
+        }
+    </style>
+
 </head>
 <body>
+<div class="container-fluid">
+    <div class="row">
+        <form style="margin-top: 20px"  th:action="@{searchFirstname}" method="get">
+            <input type="text" name="firstname"  placeholder="Name"/>&nbsp;&nbsp;&nbsp;
+            <button  class="btn btn-success"  type="submit">Find by name</button>
+        </form>
+        <form style="margin:  20px" th:action="@{searchLastname}" method="get">
+            <input type="text" name="lastname" placeholder="Surname"/>&nbsp;&nbsp;&nbsp;
+            <button type="submit"  class="btn btn-success">Find by surname</button>
+        </form>
+        <form style="margin:  20px" th:action="@{searchLesson}" method="get">
+            <input type="text" name="lesson" placeholder="Lesson"/>&nbsp;&nbsp;&nbsp;
+            <button type="submit"  class="btn btn-success">Find by lesson</button>
+        </form>
+
+    </div>
+</div>
 <div class="layer1">
     <br>
     <form method="get">

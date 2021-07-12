@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class HwFromStudentService {
@@ -25,21 +26,25 @@ public class HwFromStudentService {
         return hwFromStudentRepository.findHwFromStudentTableByStudentId(id);
     }
 
-   /* @Transactional
-    public Optional<HwFromStudentTable> findByFirstName(String firstName) {
-        return hwFromStudentRepository.findByFirstName(firstName);
+    @Transactional
+    public List<HwFromStudentTable> findByFirstName(String firstName) {
+        return hwFromStudentRepository.findHwFromStudentTablesByStudentName_FirstNameContains(firstName);
     }
 
     @Transactional
-    public Optional<HwFromStudentTable> findByLastName(String lastName) {
-        return hwFromStudentRepository.findByLastName(lastName);
-    }*/
+    public List<HwFromStudentTable> findByLastName(String lastName) {
+        return hwFromStudentRepository.findHwFromStudentTablesByStudentNameLastNameContains(lastName);
+    }
 
+    @Transactional
+    public List<HwFromStudentTable> findByLesson(Integer lesson) {
+        return hwFromStudentRepository.findHwFromStudentTablesByLessonNumber(lesson);
+    }
+
+    @Transactional
     public void deleteById(Long id) {
         hwFromStudentRepository.deleteById(id);
     }
-
-
 }
 
 
