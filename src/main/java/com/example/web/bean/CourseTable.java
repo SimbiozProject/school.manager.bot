@@ -1,21 +1,20 @@
 package com.example.web.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-@Data
 @Builder
 @AllArgsConstructor
 @Entity
+@Getter
+@Setter
 @NoArgsConstructor
 @Table(name = "courses")
+@ToString(exclude = {"userSet", "groupSet"})
 public class CourseTable implements Serializable {
 
     @Id

@@ -4,6 +4,8 @@ import com.example.web.dao.service.HwFromStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -13,9 +15,24 @@ public class TeacherCheckHwController {
     HwFromStudentService hwFromStudentService;
 
     @GetMapping(value = "teacherCheckHw")
-    public ModelAndView testPage() {
+    public ModelAndView checkingHwPage() {
         ModelAndView modelAndView = new ModelAndView("/teacherCheckHw");
         modelAndView.addObject("hwFromStudentList", hwFromStudentService.findAll());
+        return modelAndView;
+    }
+
+    @GetMapping(value = "deleteHwFromStudent" + "/{id}")
+    public ModelAndView deleteHwFrom(@PathVariable(name = "id") Long id) {
+        ModelAndView modelAndView = new ModelAndView("/deleteHwFromStudent");
+        modelAndView.addObject("hw", hwFromStudentService.findById(id));
+        return modelAndView;
+    }
+
+    @PostMapping(value = "deleteHwFromStudent" + "/{id}")
+    public ModelAndView deleteHw(@PathVariable(name = "id") Long id) {
+        ModelAndView modelAndView = new ModelAndView("/deleteHwFromStudent");
+        hwFromStudentService.deleteById(id);
+        modelAndView.setViewName("redirect:/teacherCheckHw");
         return modelAndView;
     }
 

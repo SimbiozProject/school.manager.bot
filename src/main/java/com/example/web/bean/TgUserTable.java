@@ -1,22 +1,20 @@
 package com.example.web.bean;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-
-@Data
 @Builder
 @AllArgsConstructor
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "tg_user")
+@ToString(exclude = "fromStudent")
 public class TgUserTable implements Serializable {
 
     @Id
@@ -65,5 +63,4 @@ public class TgUserTable implements Serializable {
 
     //@OneToOne(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.REMOVE)
     //private UserAnswerTable usersAnswers;
-
 }
