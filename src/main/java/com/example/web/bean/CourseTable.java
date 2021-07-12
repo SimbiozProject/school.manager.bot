@@ -25,7 +25,6 @@ public class CourseTable implements Serializable {
     @Column(name = "course_name")
     private String courseName;
 
-
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "courseUser")
     private Set<TgUserTable> userSet;
 

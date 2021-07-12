@@ -28,4 +28,5 @@ public class HwFromStudentTable implements Serializable {
 
     @Column(name = "students_hw")
     private String hwFromStudent;
+
 }

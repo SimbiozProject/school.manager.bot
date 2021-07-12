@@ -63,4 +63,5 @@ public class TgUserTable implements Serializable {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "userName", cascade = CascadeType.ALL)
     private Set<UserAnswerTable> usersAnswers;
+
 }

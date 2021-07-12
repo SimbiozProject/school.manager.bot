@@ -32,4 +32,5 @@ public interface HwFromStudentRepository extends JpaRepository<HwFromStudentTabl
     @Modifying
     @Query(value = "DELETE FROM hw_from_students WHERE student_id = ?1", nativeQuery = true)
     void deleteById(Long id);
+
 }

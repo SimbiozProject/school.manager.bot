@@ -32,4 +32,5 @@ public class GroupTable implements Serializable {
 
     @OneToMany(mappedBy = "groupHwForStudents", fetch = FetchType.EAGER)
     private Set<HwForStudentTable> studentHw;
+
 }

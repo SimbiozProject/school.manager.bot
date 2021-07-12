@@ -49,4 +49,5 @@ public class QuestionAnswerTable implements Serializable {
         this.fourthAnswer = fourthAnswer;
         this.rightAnswer = rightAnswer;
     }
+
 }

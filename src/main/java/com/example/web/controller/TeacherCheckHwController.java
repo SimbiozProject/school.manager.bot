@@ -58,5 +58,4 @@ public class TeacherCheckHwController {
         modelAndView.addObject("hwFromStudentList", hwFromStudentService.findByLesson(lesson));
         return modelAndView;
     }
-
 }
