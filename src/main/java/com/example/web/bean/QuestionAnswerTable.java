@@ -6,11 +6,12 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
-
-@Data
 @Builder
 @AllArgsConstructor
 @Entity
+@Getter
+@Setter
+@ToString(exclude = "answerFromUser")
 @NoArgsConstructor
 @Table(name = "question_answer")
 public class QuestionAnswerTable implements Serializable {
@@ -38,8 +39,6 @@ public class QuestionAnswerTable implements Serializable {
     private String rightAnswer;
 
     @OneToMany(mappedBy = "questionAnswer", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @ToString.Exclude
-    @EqualsAndHashCode.Exclude
     private Set<UserAnswerTable> answerFromUser;
 
     public QuestionAnswerTable(String question, String firstAnswer, String secondAnswer, String thirdAnswer, String fourthAnswer, String rightAnswer) {
@@ -50,4 +49,5 @@ public class QuestionAnswerTable implements Serializable {
         this.fourthAnswer = fourthAnswer;
         this.rightAnswer = rightAnswer;
     }
+
 }
