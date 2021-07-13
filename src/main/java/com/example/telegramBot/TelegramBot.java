@@ -15,8 +15,8 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import com.example.telegramBot.user.command.UserCommandHandler;
 
 
-@Component
-@PropertySource("application.properties")
+//@Component
+//@PropertySource("classpath:application.properties")
 public class TelegramBot extends TelegramLongPollingBot {
     @Value("${bot.username}")
     private String botUsername;
